@@ -1,0 +1,21 @@
+name: Vue CLI
+on: [push]
+jobs:
+  vuepress:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Build Vue
+      run: |
+            npm ci
+            npm run build
+            cd dist
+            git config --global user.email "skick1234@gmail.com"
+            git config --global user.name "skick1234"
+            git init
+            git add -A
+            git commit -m 'Deploy from Action'
+            git push -f https://skick1234:${{ secrets.TOKEN }}@github.com/distubejs/v3.git master:gh-pages
+      shell: bash
