@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
+  publicPath: '/v3/',
   configureWebpack: () => ({
     plugins: [
       new webpack.DefinePlugin({
