@@ -150,7 +150,7 @@ export default {
     updatePageTitle(route) {
       const parent = route.matched.find(r => r.name === 'docs-tag');
       if (!parent) {
-        document.title = 'discord.js';
+        document.title = 'DisTube';
         return;
       }
 
@@ -171,17 +171,24 @@ export default {
         }
       }
 
-      document.title = `${name} | discord.js`;
+      document.title = `${name} | DisTube`;
     },
 
     goHome() {
       console.log('Redirecting to default file due to the current page not existing in the newly-loaded tag\'s docs.');
-      this.$router.replace({ name: 'docs-file', params: {
+      let name = 'docs-file';
+      const params = {
         source: this.source.id,
         tag: this.tag,
-        category: this.source.defaultFile.category,
-        file: this.source.defaultFile.id,
-      } });
+      };
+      if (this.source.defaultClass) {
+        params.class = this.source.defaultClass;
+        name = 'docs-class';
+      } else {
+        params.category = this.source.defaultFile.category;
+        params.file = this.source.defaultFile.id;
+      }
+      this.$router.replace({ name, params });
     },
 
     toggleDarkMode() {

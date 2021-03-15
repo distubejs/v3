@@ -8,6 +8,10 @@
     <div class="class-item-details">
       <p v-html="description"></p>
       <param-table :params="event.params" :docs="docs" v-if="event.params && event.params.length > 0" />
+      <div v-if="event.examples" class="method-examples">
+        Examples:
+        <pre v-for="example in event.examples" :key="example"><code class="javascript">{{ example }}</code></pre>
+      </div>
       <see v-if="event.see" :see="event.see" :docs="docs" />
     </div>
   </div>

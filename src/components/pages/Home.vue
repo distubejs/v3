@@ -2,57 +2,29 @@
   <div id="home">
     <slide id="jumbotron">
       <logo :light="true" :konami="konami" id="logo" />
-      <code>npm install discord.js</code><br />
+      <code>npm install distube</code><br />
     </slide>
 
     <section id="info">
       <div class="info-item">
         <h2>About</h2>
         <p>
-          discord.js is a powerful <a href="https://nodejs.org/">node.js</a> module that allows you to interact with the
-          <a href="https://discordapp.com/developers/docs/intro">Discord API</a> very easily.
-          It takes a much more object-oriented approach than most other JS Discord libraries, making your bot's code significantly tidier and easier to comprehend.
+          DisTube is a <a href="https://discord.js.org/">discord.js</a> to simplify your music commands and play songs with audio filters on Discord without any API key.
         </p>
-        <p>
-          Usability, consistency, and performance are key focuses of discord.js, and it also has nearly 100% coverage of the Discord API.
-          It receives new Discord features shortly after they arrive in the API.
-        </p>
-      </div>
-
-      <div class="info-item">
-        <h2>Example</h2>
-        <pre><code class="javascript" v-hljs>const Discord = require('discord.js');
-const client = new Discord.Client();
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
-});
-
-client.login('token');</code></pre>
-      </div>
-
-      <div class="info-item">
-        <h2>Why?</h2>
         <p>
           <ul>
-            <li>Object-oriented</li>
-            <li>Speedy and efficient</li>
-            <li>Feature-rich</li>
-            <li>Flexible</li>
-            <li>100% Promise-based</li>
+            <li>Support YouTube, SoundCloud, Facebook, and <a href="http://ytdl-org.github.io/youtube-dl/supportedsites.html" target="_blank">700+ more sites</a></li>
+            <li>Audio filters included (bassboost, nightcore, vaporwave,...)</li>
+            <li>Flexible, use and customize easily</li>
+            <li>Autoplay related YouTube songs</li>
+            <li>Multiple servers compatible</li>
           </ul>
         </p>
       </div>
 
       <div class="info-item">
         <h2>Statistics</h2>
-        <p>
+        <p class="center">
           <stats />
         </p>
         <p class="center">...and growing!</p>

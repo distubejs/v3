@@ -1,6 +1,7 @@
 import semver from 'semver';
 
 const json = res => {
+  console.log(res);
   if (!res.ok) throw new Error('Failed to fetch docs data file from GitHub');
   return res.json();
 };
@@ -12,6 +13,7 @@ export default class DocsSource {
     this.global = options.global;
     this.repo = options.repo;
     this.defaultTag = options.defaultTag || 'master';
+    this.defaultClass = options.defaultClass;
     this.defaultFile = options.defaultFile || { category: 'general', id: 'welcome' };
     this.source = options.source || `https://github.com/${this.repo}/blob/`;
     this.branchFilter = options.branchFilter || (branch => branch !== 'master');

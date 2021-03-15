@@ -7,9 +7,6 @@
 
 <script>
 import MainSource from '../../data/MainSource';
-import CollectionSource from '../../data/CollectionSource';
-import CommandoSource from '../../data/CommandoSource';
-import RPCSource from '../../data/RPCSource';
 import DocsNavbar from '../docs/Navbar.vue';
 
 export default {
@@ -23,9 +20,6 @@ export default {
     return {
       sources: {
         [MainSource.id]: MainSource,
-        [CollectionSource.id]: CollectionSource,
-        [CommandoSource.id]: CommandoSource,
-        [RPCSource.id]: RPCSource,
       },
       source: MainSource,
       tag: MainSource.defaultTag,
@@ -43,16 +37,23 @@ export default {
     },
 
     handleRoute(route) {
+      let name = 'docs-file';
       // Set the source, or redirect to a default route
       if (route.params.source && this.sources[route.params.source]) {
         this.setSource(route.params.source);
       } else {
-        this.$router.replace({ name: 'docs-file', params: {
+        const params = {
           source: MainSource.id,
           tag: MainSource.defaultTag,
-          category: MainSource.defaultFile.category,
-          file: MainSource.defaultFile.id,
-        } });
+        };
+        if (MainSource.defaultClass) {
+          name = 'docs-class';
+          params.class = MainSource.defaultClass;
+        } else {
+          params.category = MainSource.defaultFile.category;
+          params.file = MainSource.defaultFile.id;
+        }
+        this.$router.replace({ name, params });
         return;
       }
 
@@ -60,23 +61,35 @@ export default {
       if (route.params.tag) {
         this.setTag(route.params.tag);
       } else {
-        this.$router.replace({ name: 'docs-file', params: {
+        const params = {
           source: this.source.id,
           tag: this.source.recentTag || this.source.defaultTag,
-          category: this.source.defaultFile.category,
-          file: this.source.defaultFile.id,
-        } });
+        };
+        if (this.source.defaultClass) {
+          name = 'docs-class';
+          params.class = this.source.defaultClass;
+        } else {
+          params.category = this.source.defaultFile.category;
+          params.file = this.source.defaultFile.id;
+        }
+        this.$router.replace({ name, params });
         return;
       }
 
       // Redirect to a default route
       if (!route.params.file && !route.params.class && !route.params.typedef && route.name !== 'docs-search') {
-        this.$router.replace({ name: 'docs-file', params: {
+        const params = {
           source: this.source.id,
           tag: this.tag,
-          category: this.source.defaultFile.category,
-          file: this.source.defaultFile.id,
-        } });
+        };
+        if (this.source.defaultClass) {
+          name = 'docs-class';
+          params.class = this.source.defaultClass;
+        } else {
+          params.category = this.source.defaultFile.category;
+          params.file = this.source.defaultFile.id;
+        }
+        this.$router.replace({ name, params });
       }
     },
 

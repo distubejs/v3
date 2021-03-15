@@ -1,6 +1,7 @@
-# discord.js website
+# DisTube website
 
-> The website housing documentation for discord.js
+> The website housing documentation for DisTube
+> Rebranded fork of discordjs/website
 
 ## Project setup
 ```
