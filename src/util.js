@@ -25,7 +25,7 @@ export function sourceURL(url, tag, path, file, line) {
 
 // Converts a JSDoc link value to an object of link information
 export function parseLink(link, docs) {
-  const matches = link.match(/\{@link\s+(.+?)(?:\s+(.+?))?\s*\}/i);
+  const matches = link.match(/\{@link\s+(.+?)(?:\s|\|+(.+?))?\s*\}/i);
   if (matches) link = matches[1];
   let text = matches ? matches[2] : null;
 
