@@ -5,7 +5,7 @@ export default new DocsSource({
   id: 'distube',
   name: 'DisTube',
   repo: 'skick1234/DisTube',
-  defaultTag: 'v3-beta',
+  defaultTag: 'v2',
   branchFilter: branch => !branchBlacklist.has(branch) && !branch.startsWith('dependabot/'),
   tagFilter: () => false,
   defaultClass: 'DisTube',

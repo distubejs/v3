@@ -32,7 +32,7 @@
 
       <div class="full-info-item">
         <router-link to="/docs" class="big-ass-btn">Get started</router-link>
-        <a href="https://discord.gg/bRCvFy9" class="big-ass-btn discord">Discord</a>
+        <a href="https://discord.gg/feaDd9h" class="big-ass-btn discord">Discord</a>
       </div>
     </section>
   </div>
