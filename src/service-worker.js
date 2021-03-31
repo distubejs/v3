@@ -3,8 +3,8 @@
 // Set some basic config
 workbox.setConfig({ debug: false });
 workbox.core.setCacheNameDetails({
-  prefix: 'djs',
-  suffix: 'v1',
+  prefix: 'distube',
+  suffix: 'v2',
   precache: 'precache',
   runtime: 'runtime',
 });
@@ -20,7 +20,7 @@ caches.delete('external');
 
 // Use the staleWhileRevalidate strategy by default
 const defaultStrategy = workbox.strategies.staleWhileRevalidate({
-  cacheName: 'djs-external-v1',
+  cacheName: 'distube-external-v2',
   plugins: [
     new workbox.expiration.Plugin({
       maxEntries: 50,
@@ -43,7 +43,7 @@ workbox.routing.setDefaultHandler(
 workbox.routing.registerRoute(
   /^https:\/\/raw\.githubusercontent\.com\/discordjs\/.*\.json/i,
   workbox.strategies.networkFirst({
-    cacheName: 'djs-docs-v1',
+    cacheName: 'distube-docs-v2',
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 20,
@@ -58,7 +58,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   /^https:\/\/(?:cdnjs\.cloudflare\.com|fonts\.googleapis\.com|fonts\.gstatic\.com).*/i,
   workbox.strategies.cacheFirst({
-    cacheName: 'djs-cdn-v1',
+    cacheName: 'distube-cdn-v2',
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 10,
@@ -76,7 +76,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   new RegExp(`^${escapeURLChars(self.location.origin)}.*\\.(png|jpg|jpeg|gif|svg|ico)`, 'i'),
   workbox.strategies.cacheFirst({
-    cacheName: 'djs-site-v1',
+    cacheName: 'distube-site-v2',
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 50,
@@ -91,7 +91,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   new RegExp(`^${escapeURLChars(self.location.origin)}.*`, 'i'),
   workbox.strategies.staleWhileRevalidate({
-    cacheName: 'djs-site-v1',
+    cacheName: 'distube-site-v2',
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 50,
