@@ -42,6 +42,7 @@ export default class DocsSource {
       for (const branch of branches) {
         if (branch.name !== this.defaultTag && this.branchFilter(branch.name)) this.tags.push(branch.name);
       }
+      if (process.env.NODE_ENV !== 'production') this.tags.push('testSource');
 
       // Build a list of the latest patch versions
       const latestPatches = {};
@@ -74,6 +75,7 @@ export default class DocsSource {
   }
 
   fetchDocs(tag) {
+    if (tag === 'testSource') return new Promise(r => r(require('../../test.json')));
     return fetch(`https://raw.githubusercontent.com/${this.repo}/docs/${tag}.json`).then(json);
   }
 }

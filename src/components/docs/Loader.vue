@@ -15,6 +15,7 @@
 
 <script>
 import { SHITS } from '../../util';
+import defaultLinks from '../../links';
 
 export default {
   name: 'docs-loader',
@@ -54,30 +55,7 @@ export default {
         }
 
         // Built-in type links
-        docs.links = {
-          string: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String',
-          number: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number',
-          boolean: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean',
-          symbol: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol',
-          void: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined',
-          Object: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object',
-          Function: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function',
-          function: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function',
-          Array: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array',
-          Set: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set',
-          Map: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map',
-          Date: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date',
-          RegExp: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp',
-          Promise: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise',
-          Error: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error',
-          EventEmitter: 'https://nodejs.org/dist/latest/docs/api/events.html#events_class_eventemitter',
-          Timeout: 'https://nodejs.org/dist/latest/docs/api/timers.html#timers_class_timeout',
-          Buffer: 'https://nodejs.org/dist/latest/docs/api/buffer.html#buffer_class_buffer',
-          ReadableStream: 'https://nodejs.org/dist/latest/docs/api/stream.html#stream_class_stream_readable',
-          ChildProcess: 'https://nodejs.org/dist/latest/docs/api/child_process.html#child_process_class_childprocess',
-          Worker: 'https://nodejs.org/api/worker_threads.html#worker_threads_class_worker',
-          MessagePort: 'https://nodejs.org/api/worker_threads.html#worker_threads_class_messageport',
-        };
+        docs.links = defaultLinks;
 
         // Add links for everything
         docs.externals = docs.externals || [];
