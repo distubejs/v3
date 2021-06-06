@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import MainSource from '../../data/MainSource';
-import DocsNavbar from '../docs/Navbar.vue';
+import MainSource from "../../data/MainSource";
+import DocsNavbar from "../docs/Navbar.vue";
 
 export default {
-  name: 'documentation',
-  props: ['darkMode'],
+  name: "documentation",
+  props: ["darkMode"],
   components: {
     DocsNavbar,
   },
@@ -37,7 +37,7 @@ export default {
     },
 
     handleRoute(route) {
-      let name = 'docs-file';
+      let name = "docs-file";
       // Set the source, or redirect to a default route
       if (route.params.source && this.sources[route.params.source]) {
         this.setSource(route.params.source);
@@ -47,7 +47,7 @@ export default {
           tag: MainSource.defaultTag,
         };
         if (MainSource.defaultClass) {
-          name = 'docs-class';
+          name = "docs-class";
           params.class = MainSource.defaultClass;
         } else {
           params.category = MainSource.defaultFile.category;
@@ -66,7 +66,7 @@ export default {
           tag: this.source.recentTag || this.source.defaultTag,
         };
         if (this.source.defaultClass) {
-          name = 'docs-class';
+          name = "docs-class";
           params.class = this.source.defaultClass;
         } else {
           params.category = this.source.defaultFile.category;
@@ -77,13 +77,13 @@ export default {
       }
 
       // Redirect to a default route
-      if (!route.params.file && !route.params.class && !route.params.typedef && route.name !== 'docs-search') {
+      if (!route.params.file && !route.params.class && !route.params.typedef && route.name !== "docs-search") {
         const params = {
           source: this.source.id,
           tag: this.tag,
         };
         if (this.source.defaultClass) {
-          name = 'docs-class';
+          name = "docs-class";
           params.class = this.source.defaultClass;
         } else {
           params.category = this.source.defaultFile.category;
@@ -94,11 +94,11 @@ export default {
     },
 
     toggleDarkMode() {
-      this.$emit('toggleDarkMode');
+      this.$emit("toggleDarkMode");
     },
 
     setRepository(repo) {
-      this.$emit('setRepository', repo);
+      this.$emit("setRepository", repo);
     },
   },
 

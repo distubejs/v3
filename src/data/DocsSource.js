@@ -1,8 +1,8 @@
-import semver from 'semver';
+import semver from "semver";
 
 const json = res => {
   console.log(res);
-  if (!res.ok) throw new Error('Failed to fetch docs data file from GitHub');
+  if (!res.ok) throw new Error("Failed to fetch docs data file from GitHub");
   return res.json();
 };
 
@@ -12,11 +12,11 @@ export default class DocsSource {
     this.name = options.name;
     this.global = options.global;
     this.repo = options.repo;
-    this.defaultTag = options.defaultTag || 'master';
+    this.defaultTag = options.defaultTag || "master";
     this.defaultClass = options.defaultClass;
-    this.defaultFile = options.defaultFile || { category: 'general', id: 'welcome' };
+    this.defaultFile = options.defaultFile || { category: "general", id: "welcome" };
     this.source = options.source || `https://github.com/${this.repo}/blob/`;
-    this.branchFilter = options.branchFilter || (branch => branch !== 'master');
+    this.branchFilter = options.branchFilter || (branch => branch !== "master");
     this.tagFilter = options.tagFilter || (() => true);
     this.tags = null;
     this.recentTag = null;
@@ -42,7 +42,7 @@ export default class DocsSource {
       for (const branch of branches) {
         if (branch.name !== this.defaultTag && this.branchFilter(branch.name)) this.tags.push(branch.name);
       }
-      if (process.env.NODE_ENV !== 'production') this.tags.push('testSource');
+      if (process.env.NODE_ENV !== "production") this.tags.push("testSource");
 
       // Build a list of the latest patch versions
       const latestPatches = {};
@@ -75,7 +75,7 @@ export default class DocsSource {
   }
 
   fetchDocs(tag) {
-    if (tag === 'testSource') return new Promise(r => r(require('../../test.json')));
+    if (tag === "testSource") return new Promise(r => r(require("../../test.json")));
     return fetch(`https://raw.githubusercontent.com/${this.repo}/docs/${tag}.json`).then(json);
   }
 }

@@ -38,14 +38,14 @@
 </template>
 
 <script>
-import Fuse from 'fuse.js';
-import { scopedName } from '../../util';
-import debounce from '../../debounce';
-import SearchResults from './SearchResults.vue';
+import Fuse from "fuse.js";
+import { scopedName } from "../../util";
+import debounce from "../../debounce";
+import SearchResults from "./SearchResults.vue";
 
 export default {
-  name: 'docs-search',
-  props: ['docs', 'showPrivate'],
+  name: "docs-search",
+  props: ["docs", "showPrivate"],
   components: {
     SearchResults,
   },
@@ -69,35 +69,35 @@ export default {
 
       // Add routes and other necessary info to all results
       for (const result of results) {
-        if (result.item.type === 'Class') {
+        if (result.item.type === "Class") {
           result.item.route = {
-            name: 'docs-class',
+            name: "docs-class",
             params: { class: result.item.name },
           };
           continue;
         }
-        if (result.item.type === 'Property' || result.item.type === 'Method') {
+        if (result.item.type === "Property" || result.item.type === "Method") {
           result.item.fullName = fullName(result.item, result.item.parent);
           result.item.route = {
-            name: 'docs-class',
+            name: "docs-class",
             params: { class: result.item.parent },
             query: { scrollTo: scopedName(result.item) },
           };
           continue;
         }
-        if (result.item.type === 'Event') {
+        if (result.item.type === "Event") {
           result.item.key = `e-${result.item.parent}#${result.item.name}`;
           result.item.fullName = fullName(result.item, result.item.parent);
           result.item.route = {
-            name: 'docs-class',
+            name: "docs-class",
             params: { class: result.item.parent },
             query: { scrollTo: `e-${result.item.name}` },
           };
           continue;
         }
-        if (result.item.type === 'Typedef') {
+        if (result.item.type === "Typedef") {
           result.item.route = {
-            name: 'docs-typedef',
+            name: "docs-typedef",
             params: { typedef: result.item.name },
           };
           continue;
@@ -109,13 +109,13 @@ export default {
       let r = 0;
       while (r < results.length) {
         const result = results[r];
-        if (result.item.type === 'Property' || result.item.type === 'Method' || result.item.type === 'Event') {
+        if (result.item.type === "Property" || result.item.type === "Method" || result.item.type === "Event") {
           // Get a list of the keys that matched
           const keys = [];
           for (const match of result.matches) keys.push(match.key);
 
           // Remove the item if only the class name matched
-          if (keys.length === 2 && keys.includes('parent') && keys.includes('fullName')) {
+          if (keys.length === 2 && keys.includes("parent") && keys.includes("fullName")) {
             results.splice(r, 1);
             continue;
           }
@@ -135,7 +135,7 @@ export default {
     },
 
     toggleScoresLabel() {
-      return `Scores are ${this.showScores ? 'shown' : 'hidden'}. Click to toggle.`;
+      return `Scores are ${this.showScores ? "shown" : "hidden"}. Click to toggle.`;
     },
   },
 
@@ -149,11 +149,11 @@ export default {
       const items = [];
 
       for (const c of this.docs.classes) {
-        if (!this.showPrivate && c.access === 'private') continue;
+        if (!this.showPrivate && c.access === "private") continue;
 
         if (toggles.classes) {
           items.push({
-            type: 'Class',
+            type: "Class",
             parent: c.name,
             name: c.name,
             fullName: c.name,
@@ -165,9 +165,9 @@ export default {
 
         if (c.props && toggles.props) {
           for (const p of c.props) {
-            if (!this.showPrivate && p.access === 'private') continue;
+            if (!this.showPrivate && p.access === "private") continue;
             items.push({
-              type: 'Property',
+              type: "Property",
               parent: c.name,
               name: p.name,
               fullName: fullName(p, c.name),
@@ -180,9 +180,9 @@ export default {
 
         if (c.methods && toggles.methods) {
           for (const m of c.methods) {
-            if (!this.showPrivate && m.access === 'private') continue;
+            if (!this.showPrivate && m.access === "private") continue;
             items.push({
-              type: 'Method',
+              type: "Method",
               parent: c.name,
               name: m.name,
               fullName: fullName(m, c.name),
@@ -195,9 +195,9 @@ export default {
 
         if (c.events && toggles.events) {
           for (const e of c.events) {
-            if (!this.showPrivate && e.access === 'private') continue;
+            if (!this.showPrivate && e.access === "private") continue;
             items.push({
-              type: 'Event',
+              type: "Event",
               parent: c.name,
               name: e.name,
               fullName: `${c.name}#${e.name}`,
@@ -212,9 +212,9 @@ export default {
 
       if (toggles.typedefs) {
         for (const t of this.docs.typedefs) {
-          if (!this.showPrivate && t.access === 'private') continue;
+          if (!this.showPrivate && t.access === "private") continue;
           items.push({
-            type: 'Typedef',
+            type: "Typedef",
             parent: t.name,
             name: t.name,
             fullName: t.name,
@@ -227,9 +227,9 @@ export default {
 
       return new Fuse(items, {
         keys: [
-          { name: 'name', weight: 0.5 },
-          { name: 'parent', weight: 0.2 },
-          { name: 'fullName', weight: 0.3 },
+          { name: "name", weight: 0.5 },
+          { name: "parent", weight: 0.2 },
+          { name: "fullName", weight: 0.3 },
         ],
         shouldSort: true,
         includeScore: true,
@@ -248,8 +248,8 @@ export default {
 
     search(q) {
       if (this.$route.query.q === q) return;
-      if (this.$route.query.q) this.$router.replace({ name: 'docs-search', query: { q } });
-      else this.$router.push({ name: 'docs-search', query: { q } });
+      if (this.$route.query.q) this.$router.replace({ name: "docs-search", query: { q } });
+      else this.$router.push({ name: "docs-search", query: { q } });
     },
 
     toggles: {
@@ -266,7 +266,7 @@ export default {
 };
 
 function fullName(child, parentName) {
-  return `${parentName + (child.scope === 'static' ? '.' : '#')}${child.name}`;
+  return `${parentName + (child.scope === "static" ? "." : "#")}${child.name}`;
 }
 </script>
 

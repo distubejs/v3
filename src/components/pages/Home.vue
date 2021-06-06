@@ -9,7 +9,7 @@
       <div class="info-item">
         <h2>About</h2>
         <p>
-          DisTube is a <a href="https://discord.js.org/">discord.js</a> to simplify your music commands and play songs with audio filters on Discord without any API key.
+          DisTube is a <a href="https://discord.js.org/">discord.js</a> module to simplify your music commands and play songs with audio filters on Discord without any API key.
         </p>
         <p>
           <ul>
@@ -39,20 +39,20 @@
 </template>
 
 <script>
-import Logo from '../Logo.vue';
-import Stats from '../Stats.vue';
-import MainSource from '../../data/MainSource';
+import Logo from "../Logo.vue";
+import Stats from "../Stats.vue";
+import MainSource from "../../data/MainSource";
 
 export default {
-  name: 'home',
-  props: ['konami'],
+  name: "home",
+  props: ["konami"],
   components: {
     Logo,
     Stats,
   },
 
   mounted() {
-    this.$emit('setRepository', MainSource.repo);
+    this.$emit("setRepository", MainSource.repo);
   },
 };
 </script>

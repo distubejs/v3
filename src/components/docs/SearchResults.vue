@@ -12,12 +12,12 @@
 
 <script>
 export default {
-  props: ['results', 'showScores', 'searchTerm'],
+  props: ["results", "showScores", "searchTerm"],
 
   methods: {
     highlightName(result) {
       // Get the match for the fullName
-      const match = result.matches.find(m => m.key === 'fullName');
+      const match = result.matches.find(m => m.key === "fullName");
       if (!match) return result.item.fullName || result.item.name;
 
       // Highlight all matches
@@ -27,24 +27,24 @@ export default {
         const start = name.slice(0, match.indices[i][0]);
         const end = name.slice(match.indices[i][1] + 1);
         const exact = matchStr.toLowerCase() === this.searchTerm.toLowerCase();
-        name = `${start}${exact ? '<strong>' : ''}<em>${matchStr}</em>${exact ? '</strong>' : ''}${end}`;
+        name = `${start}${exact ? "<strong>" : ""}<em>${matchStr}</em>${exact ? "</strong>" : ""}${end}`;
       }
 
       return name;
     },
 
     typeClass(type) {
-      if (type === 'Property') return 'secondary';
-      if (type === 'Method') return 'tertiary';
-      if (type === 'Event') return 'quaternary';
-      if (type === 'Typedef') return 'quinary';
-      return '';
+      if (type === "Property") return "secondary";
+      if (type === "Method") return "tertiary";
+      if (type === "Event") return "quaternary";
+      if (type === "Typedef") return "quinary";
+      return "";
     },
   },
 
   computed: {
     searchRegex() {
-      return new RegExp(this.searchTerm, 'ig');
+      return new RegExp(this.searchTerm, "ig");
     },
   },
 };

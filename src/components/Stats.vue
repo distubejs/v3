@@ -14,12 +14,12 @@ const noop = () => {
 const data = {
   downloads: `${(50000).toLocaleString()}+`,
   stars: `${(50).toLocaleString()}+`,
-  contributors: '1',
+  contributors: "1",
   fetching: false,
 };
 
 export default {
-  name: 'stats',
+  name: "stats",
 
   data() {
     return data;
@@ -35,9 +35,9 @@ export default {
       this.fetching = true;
 
       const [downloads, stars, contributors] = await Promise.all([
-        fetch('https://api.npmjs.org/downloads/range/2013-08-21:2100-08-21/distube').then(json, noop),
-        fetch('https://api.github.com/repos/skick1234/DisTube').then(json, noop),
-        fetch('https://api.github.com/repos/skick1234/DisTube/stats/contributors').then(json, noop),
+        fetch("https://api.npmjs.org/downloads/range/2013-08-21:2100-08-21/distube").then(json, noop),
+        fetch("https://api.github.com/repos/skick1234/DisTube").then(json, noop),
+        fetch("https://api.github.com/repos/skick1234/DisTube/stats/contributors").then(json, noop),
       ]);
 
       if (downloads) {

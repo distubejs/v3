@@ -1,17 +1,17 @@
-const webpack = require('webpack');
+const webpack = require("webpack");
 
 module.exports = {
-  publicPath: '/',
+  publicPath: "/",
   configureWebpack: () => ({
     plugins: [
       new webpack.DefinePlugin({
         GIT_COMMIT_HASH: JSON.stringify(
-          require('child_process')
-            .execSync('git rev-parse HEAD')
+          require("child_process")
+            .execSync("git rev-parse HEAD")
             .toString()
             .trim(),
         ),
-        PACKAGE_VERSION: JSON.stringify(require('./package').version),
+        PACKAGE_VERSION: JSON.stringify(require("./package").version),
         BUILT_AT: JSON.stringify(Date.now()),
       }),
     ],

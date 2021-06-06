@@ -11,16 +11,16 @@
 </template>
 
 <script>
-import AppNavbar from './components/AppNavbar.vue';
-import AppFooter from './components/AppFooter.vue';
-import Snackbar from './components/Snackbar.vue';
-import MainSource from './data/MainSource';
-import Konami from 'konami-code-js';
+import AppNavbar from "./components/AppNavbar.vue";
+import AppFooter from "./components/AppFooter.vue";
+import Snackbar from "./components/Snackbar.vue";
+import MainSource from "./data/MainSource";
+import Konami from "konami-code-js";
 
 let konami = null;
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     AppNavbar,
     AppFooter,
@@ -28,9 +28,9 @@ export default {
   },
 
   data() {
-    const darkMode = localStorage.getItem('dark-mode');
+    const darkMode = localStorage.getItem("dark-mode");
     return {
-      darkMode: darkMode !== 'false' && darkMode !== null,
+      darkMode: darkMode !== "false" && darkMode !== null,
       repository: MainSource.repo,
       updateExists: false,
       refreshing: false,
@@ -41,8 +41,8 @@ export default {
   methods: {
     toggleDarkMode() {
       this.darkMode = !this.darkMode;
-      localStorage.setItem('dark-mode', this.darkMode);
-      if (this.darkMode) this.$el.classList.add('dark'); else this.$el.classList.remove('dark');
+      localStorage.setItem("dark-mode", this.darkMode);
+      if (this.darkMode) this.$el.classList.add("dark"); else this.$el.classList.remove("dark");
     },
 
     setRepository(repo) {
@@ -58,14 +58,14 @@ export default {
       if (!this.updateExists) return;
       this.updateExists = false;
       if (!this.registration || !this.registration.waiting) return;
-      this.registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+      this.registration.waiting.postMessage({ type: "SKIP_WAITING" });
     },
 
     poop() {
       // Create the poop
-      const poop = document.createElement('div');
-      poop.className = 'poop';
-      poop.innerHTML = '💩';
+      const poop = document.createElement("div");
+      poop.className = "poop";
+      poop.innerHTML = "💩";
 
       // Set the poop's travel time and how spinny it is
       const duration = (Math.random() * 4000) + 1000;
@@ -101,8 +101,8 @@ export default {
   },
 
   created() {
-    document.addEventListener('swUpdated', this.swUpdated, { once: true });
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
+    document.addEventListener("swUpdated", this.swUpdated, { once: true });
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
       if (this.refreshing) return;
       this.refreshing = true;
       window.location.reload();
@@ -110,7 +110,7 @@ export default {
   },
 
   mounted() {
-    if (this.darkMode) this.$el.classList.add('dark');
+    if (this.darkMode) this.$el.classList.add("dark");
     if (!konami) {
       konami = new Konami(() => {
         this.konami = true;

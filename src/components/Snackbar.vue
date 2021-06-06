@@ -11,12 +11,12 @@
 
 <script>
 export default {
-  name: 'snackbar',
-  props: ['action'],
+  name: "snackbar",
+  props: ["action"],
 
   methods: {
     click() {
-      this.$emit('click');
+      this.$emit("click");
     },
   },
 };

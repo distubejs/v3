@@ -9,7 +9,7 @@ function debounce(fn, delay) {
 function debounceDirective(el, binding) {
   if (binding.value === binding.oldValue) return;
   el.oninput = debounce(() => {
-    el.dispatchEvent(new Event('change'));
+    el.dispatchEvent(new Event("change"));
   }, parseInt(binding.value) || 500);
 }
 

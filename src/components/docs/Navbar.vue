@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import debounce from '../../debounce';
-import { SHITS } from '../../util';
+import debounce from "../../debounce";
+import { SHITS } from "../../util";
 
 export default {
-  name: 'docs-navbar',
-  props: ['sources', 'source'],
+  name: "docs-navbar",
+  props: ["sources", "source"],
   directives: {
     debounce,
   },
@@ -56,13 +56,13 @@ export default {
     },
 
     goToSearch() {
-      if (this.$route.name !== 'docs-search') this.$router.push({ name: 'docs-search', query: { q: this.search } });
+      if (this.$route.name !== "docs-search") this.$router.push({ name: "docs-search", query: { q: this.search } });
     },
   },
 
   watch: {
     sourceChoice(src) {
-      if (this.$route.params.source !== src) this.$router.push({ name: 'docs-source', params: { source: src } });
+      if (this.$route.params.source !== src) this.$router.push({ name: "docs-source", params: { source: src } });
     },
 
     tagChoice(tag) {
@@ -79,8 +79,8 @@ export default {
     },
 
     search(q) {
-      if (this.$route.query.q) this.$router.replace({ name: 'docs-search', query: { q } });
-      else this.$router.push({ name: 'docs-search', query: { q } });
+      if (this.$route.query.q) this.$router.replace({ name: "docs-search", query: { q } });
+      else this.$router.push({ name: "docs-search", query: { q } });
     },
 
     $route(to) {

@@ -9,11 +9,11 @@
 
 <script>
 export default {
-  name: 'type-link',
-  props: ['docs', 'type'],
+  name: "type-link",
+  props: ["docs", "type"],
   computed: {
     typeName() {
-      if (this.type[0] === 'function') return 'Function';
+      if (this.type[0] === "function") return "Function";
       return this.type[0];
     },
 

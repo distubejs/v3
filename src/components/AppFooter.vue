@@ -8,6 +8,7 @@
         <em class="fa" :class="darkMode ? 'fa-sun-o' : 'fa-moon-o'"></em>
         Turn {{ darkMode ? 'on' : 'off' }} the lights
       </a>
+      <p>Made with <a href="https://github.com/discordjs/website" target="_blank">discord.js-website</a></p>
     </container>
 
     <div id="site-meta">
@@ -19,11 +20,11 @@
 </template>
 
 <script>
-import Stats from './Stats.vue';
+import Stats from "./Stats.vue";
 
 export default {
-  name: 'djs-footer',
-  props: ['darkMode'],
+  name: "djs-footer",
+  props: ["darkMode"],
   components: {
     Stats,
   },
@@ -37,7 +38,7 @@ export default {
 
   methods: {
     toggleDarkMode(event) {
-      this.$emit('toggleDarkMode');
+      this.$emit("toggleDarkMode");
       event.preventDefault();
     },
   },
@@ -51,15 +52,6 @@ export default {
     padding: 3rem;
     background: $color-navbar-bg;
     color: $color-footer-text;
-
-    a {
-      text-decoration: none;
-      color: $color-footer-text;
-    }
-
-    a:hover {
-      color: lighten($color-footer-text, 10%);
-    }
 
     .container {
       text-align: center;

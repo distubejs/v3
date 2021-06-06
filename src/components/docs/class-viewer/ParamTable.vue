@@ -29,13 +29,13 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import Types from '../Types.vue';
-import { convertLinks, typeKey } from '../../../util';
+import Vue from "vue";
+import Types from "../Types.vue";
+import { convertLinks, typeKey } from "../../../util";
 
 export default {
-  name: 'param-table',
-  props: ['params', 'docs'],
+  name: "param-table",
+  props: ["params", "docs"],
   components: {
     Types,
   },
@@ -50,11 +50,11 @@ export default {
     typeKey,
 
     paramDescription(param) {
-      return Vue.filter('marked')(convertLinks(param.description, this.docs, this.$router, this.$route));
+      return Vue.filter("marked")(convertLinks(param.description, this.docs, this.$router, this.$route));
     },
 
     paramDefault(param) {
-      return param.optional ? `<code>${param.default}</code>` : '';
+      return param.optional ? `<code>${param.default}</code>` : "";
     },
   },
 };

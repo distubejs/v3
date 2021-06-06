@@ -41,21 +41,21 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import Types from '../Types.vue';
-import TypeLink from '../TypeLink.vue';
-import ParamTable from './ParamTable.vue';
-import Overview from './Overview';
-import Property from './Property';
-import Method from './Method';
-import Event from './Event';
-import SourceButton from '../SourceButton.vue';
-import See from '../See';
-import { hljs, convertLinks, scopedName, typeKey } from '../../../util';
+import Vue from "vue";
+import Types from "../Types.vue";
+import TypeLink from "../TypeLink.vue";
+import ParamTable from "./ParamTable.vue";
+import Overview from "./Overview";
+import Property from "./Property";
+import Method from "./Method";
+import Event from "./Event";
+import SourceButton from "../SourceButton.vue";
+import See from "../See";
+import { hljs, convertLinks, scopedName, typeKey } from "../../../util";
 
 export default {
-  name: 'class-viewer',
-  props: ['docs', 'showPrivate', 'darkMode'],
+  name: "class-viewer",
+  props: ["docs", "showPrivate", "darkMode"],
   components: {
     Types,
     TypeLink,
@@ -77,16 +77,16 @@ export default {
   computed: {
     constructorParams() {
       if (!this.clarse.construct || !this.clarse.construct.params) return null;
-      return this.clarse.construct.params.filter(p => !p.name.includes('.'));
+      return this.clarse.construct.params.filter(p => !p.name.includes("."));
     },
 
     properties() {
       if (!this.clarse.props) return null;
       let props;
       if (this.showPrivate) props = this.clarse.props;
-      else props = this.clarse.props.filter(p => p.access !== 'private');
+      else props = this.clarse.props.filter(p => p.access !== "private");
       return props.sort((a, b) =>
-        `${a.scope === 'static' ? 'ZZZ' : ''}${a.name}`.localeCompare(`${b.scope === 'static' ? 'ZZZ' : ''}${b.name}`),
+        `${a.scope === "static" ? "ZZZ" : ""}${a.name}`.localeCompare(`${b.scope === "static" ? "ZZZ" : ""}${b.name}`),
       );
     },
 
@@ -94,14 +94,14 @@ export default {
       if (!this.clarse.methods) return null;
       let methods;
       if (this.showPrivate) methods = this.clarse.methods;
-      else methods = this.clarse.methods.filter(p => p.access !== 'private');
+      else methods = this.clarse.methods.filter(p => p.access !== "private");
       return methods.sort((a, b) =>
-        `${a.scope === 'static' ? 'ZZZ' : ''}${a.name}`.localeCompare(`${b.scope === 'static' ? 'ZZZ' : ''}${b.name}`),
+        `${a.scope === "static" ? "ZZZ" : ""}${a.name}`.localeCompare(`${b.scope === "static" ? "ZZZ" : ""}${b.name}`),
       );
     },
 
     description() {
-      return Vue.filter('marked')(convertLinks(this.clarse.description, this.docs, this.$router, this.$route));
+      return Vue.filter("marked")(convertLinks(this.clarse.description, this.docs, this.$router, this.$route));
     },
   },
 
@@ -112,7 +112,7 @@ export default {
 
   mounted() {
     this.$nextTick(() => {
-      for (const el of this.$el.querySelectorAll('pre code')) hljs(el);
+      for (const el of this.$el.querySelectorAll("pre code")) hljs(el);
     });
   },
 };

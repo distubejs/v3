@@ -19,11 +19,11 @@
 </template>
 
 <script>
-import { parseLink } from '../../util';
+import { parseLink } from "../../util";
 
 export default {
-  name: 'docs-see',
-  props: ['see', 'docs'],
+  name: "docs-see",
+  props: ["see", "docs"],
 
   computed: {
     parsed() {

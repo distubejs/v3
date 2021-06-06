@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'logo',
-  props: ['light', 'konami'],
+  name: "logo",
+  props: ["light", "konami"],
 };
 </script>

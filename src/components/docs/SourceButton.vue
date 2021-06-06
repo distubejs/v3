@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import { sourceURL } from '../../util';
+import { sourceURL } from "../../util";
 
 export default {
-  name: 'source-button',
-  props: ['meta', 'path', 'docs'],
+  name: "source-button",
+  props: ["meta", "path", "docs"],
 
   methods: {
     sourceURL(path, file, line) {

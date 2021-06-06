@@ -1,4 +1,4 @@
-import { resolve as resolveURL } from 'url';
+import { resolve as resolveURL } from "url";
 
 // Highlights an element with highlight.js, delaying until it's loaded
 export function hljs(el) {
@@ -20,7 +20,7 @@ export function hljs(el) {
 
 // Creates a full URL for a GitHub source view
 export function sourceURL(url, tag, path, file, line) {
-  return resolveURL(url, `${tag}/${path}${file ? `/${file}` : ''}${line ? `#L${line}` : ''}`);
+  return resolveURL(url, `${tag}/${path}${file ? `/${file}` : ""}${line ? `#L${line}` : ""}`);
 }
 
 // Converts a JSDoc link value to an object of link information
@@ -34,10 +34,10 @@ export function parseLink(link, docs) {
   if (docs.links[split[0]]) {
     return {
       text: text || link,
-      link: typeof docs.links[split[0]] === 'object' ? {
+      link: typeof docs.links[split[0]] === "object" ? {
         name: docs.links[split[0]].name,
         params: docs.links[split[0]].params,
-        query: { scrollTo: split[1] ? `${split[1] === '.' ? 's-' : ''}${split[2]}` : undefined },
+        query: { scrollTo: split[1] ? `${split[1] === "." ? "s-" : ""}${split[2]}` : undefined },
       } : docs.links[split[0]],
     };
   }
@@ -60,7 +60,7 @@ export function convertLinks(text, docs, router, route) {
 
   const regex = /\{@link\s+(.+?)(?:\s+(.+?))?\s*\}/gi;
   let match;
-  let newText = '';
+  let newText = "";
   let start = 0;
 
   while (match = regex.exec(text)) { // eslint-disable-line no-cond-assign
@@ -69,7 +69,7 @@ export function convertLinks(text, docs, router, route) {
     const parsed = parseLink(match[0], docs);
     if (parsed.link) {
       let link;
-      if (typeof parsed.link === 'object') {
+      if (typeof parsed.link === "object") {
         if (!parsed.link.params) parsed.link.params = {};
         parsed.link.params.source = route.params.source;
         parsed.link.params.tag = route.params.tag;
@@ -95,12 +95,12 @@ export function convertLinks(text, docs, router, route) {
 
 // Prefixes a doc item's name with "s-" if static
 export function scopedName(item) {
-  return `${item.scope === 'static' ? 's-' : ''}${item.name}`;
+  return `${item.scope === "static" ? "s-" : ""}${item.name}`;
 }
 
 // Makes a key for a types array/string
 export function typeKey(type) {
-  return typeof type === 'string' ? type : type.join('-');
+  return typeof type === "string" ? type : type.join("-");
 }
 
 // Stupid Holder to Improve Tag Switching

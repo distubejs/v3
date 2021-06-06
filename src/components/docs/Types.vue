@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import TypeLink from './TypeLink.vue';
-import { typeKey } from '../../util';
+import TypeLink from "./TypeLink.vue";
+import { typeKey } from "../../util";
 
 export default {
-  name: 'types',
-  props: ['names', 'variable', 'nullable', 'docs'],
+  name: "types",
+  props: ["names", "variable", "nullable", "docs"],
   components: {
     TypeLink,
   },

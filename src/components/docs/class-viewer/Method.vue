@@ -56,17 +56,17 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import Types from '../Types.vue';
-import TypeLink from '../TypeLink.vue';
-import ParamTable from './ParamTable.vue';
-import SourceButton from '../SourceButton.vue';
-import See from '../See.vue';
-import { convertLinks, parseLink, typeKey } from '../../../util';
+import Vue from "vue";
+import Types from "../Types.vue";
+import TypeLink from "../TypeLink.vue";
+import ParamTable from "./ParamTable.vue";
+import SourceButton from "../SourceButton.vue";
+import See from "../See.vue";
+import { convertLinks, parseLink, typeKey } from "../../../util";
 
 export default {
-  name: 'class-method',
-  props: ['method', 'docs'],
+  name: "class-method",
+  props: ["method", "docs"],
   components: {
     Types,
     TypeLink,
@@ -78,24 +78,24 @@ export default {
   computed: {
     params() {
       if (!this.method.params) return null;
-      return this.method.params.filter(p => !p.name.includes('.'));
+      return this.method.params.filter(p => !p.name.includes("."));
     },
 
     description() {
-      return Vue.filter('marked')(convertLinks(this.method.description, this.docs, this.$router, this.$route));
+      return Vue.filter("marked")(convertLinks(this.method.description, this.docs, this.$router, this.$route));
     },
 
     returnDescription() {
-      return Vue.filter('marked')(convertLinks(this.method.returns.description, this.docs, this.$router, this.$route));
+      return Vue.filter("marked")(convertLinks(this.method.returns.description, this.docs, this.$router, this.$route));
     },
 
     emits() {
       if (!this.method.emits) return null;
-      return this.method.emits.map(e => parseLink(e.replace(/:event/i, ''), this.docs));
+      return this.method.emits.map(e => parseLink(e.replace(/:event/i, ""), this.docs));
     },
 
     scrollTo() {
-      return `${this.method.scope === 'static' ? 's-' : ''}${this.method.name}`;
+      return `${this.method.scope === "static" ? "s-" : ""}${this.method.name}`;
     },
   },
 

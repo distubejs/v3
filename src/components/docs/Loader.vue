@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import { SHITS } from '../../util';
-import defaultLinks from '../../links';
+import { SHITS } from "../../util";
+import defaultLinks from "../../links";
 
 export default {
-  name: 'docs-loader',
-  props: ['source', 'tag', 'darkMode'],
+  name: "docs-loader",
+  props: ["source", "tag", "darkMode"],
 
   data() {
     return {
@@ -43,7 +43,7 @@ export default {
 
       this.source.fetchDocs(this.tag).then(docs => { // eslint-disable-line complexity
         if (this.source !== startSource || this.tag !== startTag) return;
-        console.log('Loading', startSource, startTag);
+        console.log("Loading", startSource, startTag);
 
         // Sort everything
         docs.classes.sort((a, b) => a.name.localeCompare(b.name));
@@ -61,13 +61,13 @@ export default {
         docs.externals = docs.externals || [];
         docs.classes = docs.classes || [];
         docs.typedefs = docs.typedefs || [];
-        for (const x of docs.externals) docs.links[x.name] = x.see[0].replace(/\{@link\s+(.+?)\s*\}/i, '$1');
-        for (const c of docs.classes) docs.links[c.name] = { name: 'docs-class', params: { class: c.name } };
-        for (const t of docs.typedefs) docs.links[t.name] = { name: 'docs-typedef', params: { typedef: t.name } };
+        for (const x of docs.externals) docs.links[x.name] = x.see[0].replace(/\{@link\s+(.+?)\s*\}/i, "$1");
+        for (const c of docs.classes) docs.links[c.name] = { name: "docs-class", params: { class: c.name } };
+        for (const t of docs.typedefs) docs.links[t.name] = { name: "docs-typedef", params: { typedef: t.name } };
 
         // Workaround for the single use of inter-source see also linking
-        if (this.source.id === 'commando') {
-          docs.links.Message = { name: 'docs-class', params: { source: 'main', tag: 'master', class: 'Message' } };
+        if (this.source.id === "commando") {
+          docs.links.Message = { name: "docs-class", params: { source: "main", tag: "master", class: "Message" } };
         }
 
         docs.global = this.source.global;
@@ -76,24 +76,24 @@ export default {
         this.docs = docs;
         this.loadingTag = null;
         this.updatePageTitle(this.$route);
-        console.log('Finished loading', startSource, startTag);
+        console.log("Finished loading", startSource, startTag);
 
         // Verify the destination item exists when switching tags
         if (SHITS.switching) {
           const route = this.$route;
           SHITS.switching = false;
-          if (route.name === 'docs-class') {
+          if (route.name === "docs-class") {
             if (!docs.classes.some(c => c.name === route.params.class)) this.goHome();
-          } else if (route.name === 'docs-typedef') {
+          } else if (route.name === "docs-typedef") {
             if (!docs.typedefs.some(t => t.name === route.params.typedef)) this.goHome();
-          } else if (route.name === 'docs-file') {
+          } else if (route.name === "docs-file") {
             if (!docs.custom[route.params.category] || !docs.custom[route.params.category].files[route.params.file]) {
               this.goHome();
             }
           }
         }
       }).catch(err => {
-        console.error('Error while loading', startSource, startTag, err);
+        console.error("Error while loading", startSource, startTag, err);
         this.error = err;
         this.loadingTag = null;
       });
@@ -107,9 +107,9 @@ export default {
           if (!el) el = document.getElementById(`doc-for-e-${this.$route.query.scrollTo}`);
           if (!el) el = document.getElementById(this.$route.query.scrollTo);
           if (!el) return;
-          el.setAttribute('data-scrolled', true);
-          setTimeout(() => el.setAttribute('data-scrolled', false), 1000);
-          setTimeout(() => el.removeAttribute('data-scrolled'), 2000);
+          el.setAttribute("data-scrolled", true);
+          setTimeout(() => el.setAttribute("data-scrolled", false), 1000);
+          setTimeout(() => el.removeAttribute("data-scrolled"), 2000);
           el.scrollIntoView();
           window.scrollBy(0, -50);
         };
@@ -126,26 +126,26 @@ export default {
     },
 
     updatePageTitle(route) {
-      const parent = route.matched.find(r => r.name === 'docs-tag');
+      const parent = route.matched.find(r => r.name === "docs-tag");
       if (!parent) {
-        document.title = 'DisTube';
+        document.title = "DisTube";
         return;
       }
 
       let name;
       if (route.params.file) {
         const category = this.docs.custom[route.params.category];
-        name = category && category.files[route.params.file] ? category.files[route.params.file].name : 'Unknown file';
+        name = category && category.files[route.params.file] ? category.files[route.params.file].name : "Unknown file";
       } else {
         const { class: clarse, typedef } = route.params;
-        name = clarse || typedef || 'Search';
+        name = clarse || typedef || "Search";
 
-        if (name === 'Search') {
+        if (name === "Search") {
           const query = route.query.q;
           if (query) name = `${name}: ${query}`;
         } else if (clarse) {
           const param = route.query.scrollTo;
-          if (param) name = `${name}${param.startsWith('s-') ? `.${param.slice(2)}` : `#${param.startsWith('e-') ? param.slice(2) : param}`}`;
+          if (param) name = `${name}${param.startsWith("s-") ? `.${param.slice(2)}` : `#${param.startsWith("e-") ? param.slice(2) : param}`}`;
         }
       }
 
@@ -153,15 +153,15 @@ export default {
     },
 
     goHome() {
-      console.log('Redirecting to default file due to the current page not existing in the newly-loaded tag\'s docs.');
-      let name = 'docs-file';
+      console.log("Redirecting to default file due to the current page not existing in the newly-loaded tag's docs.");
+      let name = "docs-file";
       const params = {
         source: this.source.id,
         tag: this.tag,
       };
       if (this.source.defaultClass) {
         params.class = this.source.defaultClass;
-        name = 'docs-class';
+        name = "docs-class";
       } else {
         params.category = this.source.defaultFile.category;
         params.file = this.source.defaultFile.id;
@@ -170,11 +170,11 @@ export default {
     },
 
     toggleDarkMode() {
-      this.$emit('toggleDarkMode');
+      this.$emit("toggleDarkMode");
     },
 
     setRepository(repo) {
-      this.$emit('setRepository', repo);
+      this.$emit("setRepository", repo);
     },
   },
 

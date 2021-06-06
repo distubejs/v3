@@ -34,16 +34,16 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import { hljs, convertLinks, typeKey } from '../../util';
-import Types from './Types.vue';
-import ParamTable from './class-viewer/ParamTable.vue';
-import SourceButton from './SourceButton.vue';
-import See from './See.vue';
+import Vue from "vue";
+import { hljs, convertLinks, typeKey } from "../../util";
+import Types from "./Types.vue";
+import ParamTable from "./class-viewer/ParamTable.vue";
+import SourceButton from "./SourceButton.vue";
+import See from "./See.vue";
 
 export default {
-  name: 'typedef-viewer',
-  props: ['docs', 'darkMode'],
+  name: "typedef-viewer",
+  props: ["docs", "darkMode"],
   components: {
     Types,
     ParamTable,
@@ -59,13 +59,13 @@ export default {
 
   computed: {
     description() {
-      return Vue.filter('marked')(convertLinks(this.typedef.description, this.docs, this.$router, this.$route));
+      return Vue.filter("marked")(convertLinks(this.typedef.description, this.docs, this.$router, this.$route));
     },
 
     returnsDescription() {
       const returns = this.typedef.returns;
-      if (returns) return Vue.filter('marked')(convertLinks(returns.description, this.docs, this.$router, this.$route));
-      return '';
+      if (returns) return Vue.filter("marked")(convertLinks(returns.description, this.docs, this.$router, this.$route));
+      return "";
     },
   },
 
@@ -75,7 +75,7 @@ export default {
 
   mounted() {
     this.$nextTick(() => {
-      for (const el of this.$el.querySelectorAll('pre code')) hljs(el);
+      for (const el of this.$el.querySelectorAll("pre code")) hljs(el);
     });
   },
 };

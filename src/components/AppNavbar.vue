@@ -2,11 +2,11 @@
   <header>
     <container>
       <router-link to="/">DisTube</router-link>
-
       <nav>
-        <router-link to="/docs">Documentation</router-link><!--
-        --><a :href="`https://github.com/${repository}`">GitHub</a><!--
-        --><a href="https://distube.js.org/guide/">Guide (WIP)</a>
+        <router-link to="/docs">Documentation</router-link>
+        <a :href="`https://github.com/${repository}`">GitHub</a>
+        <a href="https://discord.gg/feaDd9h">Discord</a>
+        <a href="https://distube.js.org/guide/">Guide (WIP)</a>
       </nav>
     </container>
   </header>
@@ -14,8 +14,8 @@
 
 <script>
 export default {
-  name: 'navbar',
-  props: ['repository'],
+  name: "navbar",
+  props: ["repository"],
 };
 </script>
 

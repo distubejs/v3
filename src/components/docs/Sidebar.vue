@@ -50,8 +50,8 @@
 
 <script>
 export default {
-  name: 'docs-sidebar',
-  props: ['docs', 'darkMode'],
+  name: "docs-sidebar",
+  props: ["docs", "darkMode"],
 
   data() {
     return {
@@ -62,19 +62,19 @@ export default {
 
   computed: {
     visibleClasses() {
-      return this.showPrivate ? this.docs.classes : this.docs.classes.filter(c => c.access !== 'private');
+      return this.showPrivate ? this.docs.classes : this.docs.classes.filter(c => c.access !== "private");
     },
 
     visibleTypedefs() {
-      return this.showPrivate ? this.docs.typedefs : this.docs.typedefs.filter(t => t.access !== 'private');
+      return this.showPrivate ? this.docs.typedefs : this.docs.typedefs.filter(t => t.access !== "private");
     },
 
     togglePrivateLabel() {
-      return `Private items are ${this.showPrivate ? 'shown' : 'hidden'}. Click to toggle.`;
+      return `Private items are ${this.showPrivate ? "shown" : "hidden"}. Click to toggle.`;
     },
 
     toggleDarkModeLabel() {
-      return `The lights are ${this.darkMode ? 'off' : 'on'}. Click to toggle.`;
+      return `The lights are ${this.darkMode ? "off" : "on"}. Click to toggle.`;
     },
   },
 
@@ -88,13 +88,13 @@ export default {
     },
 
     toggleDarkMode() {
-      this.$emit('toggleDarkMode');
+      this.$emit("toggleDarkMode");
     },
   },
 
   watch: {
     showPrivate(to) {
-      this.$emit('showPrivate', to);
+      this.$emit("showPrivate", to);
     },
 
     $route(to) {

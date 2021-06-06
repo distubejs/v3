@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: 'unknown-route',
-  props: ['darkMode'],
+  name: "unknown-route",
+  props: ["darkMode"],
 };
 </script>
 

@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import { hljs } from '../../util';
-import SourceButton from './SourceButton.vue';
+import Vue from "vue";
+import { hljs } from "../../util";
+import SourceButton from "./SourceButton.vue";
 
 export default {
-  name: 'file-viewer',
-  props: ['docs', 'darkMode'],
+  name: "file-viewer",
+  props: ["docs", "darkMode"],
   components: {
     SourceButton,
   },
@@ -28,15 +28,15 @@ export default {
   computed: {
     html() {
       let content;
-      if (this.file.type === 'md') content = this.file.content;
+      if (this.file.type === "md") content = this.file.content;
       else content = `# ${this.file.name}\n\`\`\`${this.file.type}\n${this.file.content}\n\`\`\``;
-      return Vue.filter('marked')(content);
+      return Vue.filter("marked")(content);
     },
   },
 
   mounted() {
     this.$nextTick(() => {
-      for (const el of this.$el.querySelectorAll('pre code')) hljs(el);
+      for (const el of this.$el.querySelectorAll("pre code")) hljs(el);
     });
   },
 };

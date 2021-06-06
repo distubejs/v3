@@ -24,16 +24,16 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import Types from '../Types.vue';
-import ParamTable from './ParamTable.vue';
-import SourceButton from '../SourceButton.vue';
-import See from '../See.vue';
-import { convertLinks, typeKey } from '../../../util';
+import Vue from "vue";
+import Types from "../Types.vue";
+import ParamTable from "./ParamTable.vue";
+import SourceButton from "../SourceButton.vue";
+import See from "../See.vue";
+import { convertLinks, typeKey } from "../../../util";
 
 export default {
-  name: 'class-property',
-  props: ['prop', 'docs'],
+  name: "class-property",
+  props: ["prop", "docs"],
   components: {
     Types,
     ParamTable,
@@ -43,11 +43,11 @@ export default {
 
   computed: {
     description() {
-      return Vue.filter('marked')(convertLinks(this.prop.description, this.docs, this.$router, this.$route));
+      return Vue.filter("marked")(convertLinks(this.prop.description, this.docs, this.$router, this.$route));
     },
 
     scrollTo() {
-      return `${this.prop.scope === 'static' ? 's-' : ''}${this.prop.name}`;
+      return `${this.prop.scope === "static" ? "s-" : ""}${this.prop.name}`;
     },
   },
 

@@ -19,11 +19,11 @@
 </template>
 
 <script>
-import Sidebar from './Sidebar.vue';
+import Sidebar from "./Sidebar.vue";
 
 export default {
-  name: 'docs-viewer',
-  props: ['docs', 'darkMode'],
+  name: "docs-viewer",
+  props: ["docs", "darkMode"],
   components: {
     Sidebar,
   },
@@ -38,7 +38,7 @@ export default {
     key() {
       const params = this.$route.params;
       if (params.file) return `${params.category}/${params.file}`;
-      if (params.search) return 'search';
+      if (params.search) return "search";
       return params.class || params.typedef;
     },
   },
@@ -53,13 +53,13 @@ export default {
     },
 
     toggleDarkMode() {
-      this.$emit('toggleDarkMode');
+      this.$emit("toggleDarkMode");
     },
   },
 
   mounted() {
     this.$nextTick(() => {
-      const scroller = document.getElementById('scroll-top');
+      const scroller = document.getElementById("scroll-top");
       let hideTimeout;
       let showTimeout;
 
@@ -67,10 +67,10 @@ export default {
         if ((window.pageYOffset || document.documentElement.scrollTop) > 300) {
           clearTimeout(hideTimeout);
           clearTimeout(showTimeout);
-          scroller.style.display = 'block';
-          showTimeout = setTimeout(() => { scroller.style.opacity = '1'; }, 20);
-          window.removeEventListener('scroll', showListener);
-          window.addEventListener('scroll', hideListener);
+          scroller.style.display = "block";
+          showTimeout = setTimeout(() => { scroller.style.opacity = "1"; }, 20);
+          window.removeEventListener("scroll", showListener);
+          window.addEventListener("scroll", hideListener);
         }
       };
 
@@ -78,14 +78,14 @@ export default {
         if ((window.pageYOffset || document.documentElement.scrollTop) < 300) {
           clearTimeout(hideTimeout);
           clearTimeout(showTimeout);
-          scroller.style.opacity = '0';
-          hideTimeout = setTimeout(() => { scroller.style.display = 'none'; }, 1000);
-          window.removeEventListener('scroll', hideListener);
-          window.addEventListener('scroll', showListener);
+          scroller.style.opacity = "0";
+          hideTimeout = setTimeout(() => { scroller.style.display = "none"; }, 1000);
+          window.removeEventListener("scroll", hideListener);
+          window.addEventListener("scroll", showListener);
         }
       };
 
-      window.addEventListener('scroll', showListener);
+      window.addEventListener("scroll", showListener);
     });
   },
 };
