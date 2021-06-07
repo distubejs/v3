@@ -188,6 +188,7 @@ export default {
           color: inherit;
           text-decoration: none;
           border-left: 2px solid transparentize($color-primary, 1);
+          white-space: nowrap;
 
           &:hover {
             border-color: $color-primary;
