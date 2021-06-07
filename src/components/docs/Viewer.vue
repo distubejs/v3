@@ -123,6 +123,10 @@ export default {
       padding: 8px;
       border: 1px solid;
       border-left: 2px solid;
+
+      p {
+        margin: 0;
+      }
     }
 
     div.info {
