@@ -22,7 +22,7 @@
 
     <div id="class-constructor" v-if="clarse.construct && (showPrivate || clarse.construct.access !== 'private')">
       <h2>Constructor</h2>
-      <pre><code class="js">new {{ docs.global && docs.global !== clarse.name ? docs.global + "." : "" }}{{ clarse.name }}(<span class="constructor-param" v-for="param in constructorParams" :key="param.name">{{ param.name }}</span>);</code></pre>
+      <pre><code class="js">new {{ docs.global && docs.global !== clarse.name ? docs.global + "." : "" }}{{ clarse.name }}{{ tag === "alpha" && clarse.name === docs.global ? ".default" : "" }}(<span class="constructor-param" v-for="param in constructorParams" :key="param.name">{{ param.name }}</span>);</code></pre>
       <param-table :params="clarse.construct.params" :docs="docs" />
     </div>
 
@@ -70,6 +70,7 @@ export default {
 
   data() {
     return {
+      tag: this.$route.params.tag,
       clarse: this.docs.classes.find(c => c.name === this.$route.params.class),
     };
   },
