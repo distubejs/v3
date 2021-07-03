@@ -8,6 +8,6 @@ export default new DocsSource({
   global: "DisTube",
   defaultTag: "v2",
   branchFilter: branch => !branchBlacklist.has(branch) && !branch.startsWith("dependabot/"),
-  tagFilter: tag => tag.match(/\D/),
+  tagFilter: tag => tag.match(/^\D/),
   defaultClass: "DisTube",
 });
