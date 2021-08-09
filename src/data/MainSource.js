@@ -3,8 +3,8 @@ import DocsSource from "./DocsSource";
 
 const branchBlacklist = new Set(["docs", "js-docs", "v2", "alpha"]);
 export default new DocsSource({
-  id: "TS-DisTube",
-  name: "TS DisTube",
+  id: "DisTube",
+  name: "TypeScript DisTube",
   repo: "skick1234/DisTube",
   global: "DisTube",
   branch: "docs",
