@@ -22,7 +22,7 @@
 
     <div id="class-constructor" v-if="clarse.construct && (showPrivate || clarse.construct.access !== 'private')">
       <h2>Constructor</h2>
-      <pre><code class="js">new {{ docs.global }}{{ ["v2", "3.0.0-beta.33"].include(tag) && clarse.name === docs.global ? "" : `.${clarse.name}` }}(<span class="constructor-param" v-for="param in constructorParams" :key="param.name">{{ param.name }}</span>);</code></pre>
+      <pre><code class="js">new {{ docs.global }}{{ ["v2", "3.0.0-beta.33"].includes(tag) && clarse.name === docs.global ? "" : `.${clarse.name}` }}(<span class="constructor-param" v-for="param in constructorParams" :key="param.name">{{ param.name }}</span>);</code></pre>
       <param-table :params="clarse.construct.params" :docs="docs" />
     </div>
 
