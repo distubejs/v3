@@ -12,6 +12,7 @@ export default class DocsSource {
     this.name = options.name;
     this.global = options.global;
     this.repo = options.repo;
+    this.branch = options.branch;
     this.defaultTag = options.defaultTag || "master";
     this.defaultClass = options.defaultClass;
     this.defaultFile = options.defaultFile || { category: "general", id: "welcome" };
@@ -76,6 +77,6 @@ export default class DocsSource {
 
   fetchDocs(tag) {
     if (tag === "testSource") return new Promise(r => r(require("../../test.json")));
-    return fetch(`https://raw.githubusercontent.com/${this.repo}/docs/${tag}.json`).then(json);
+    return fetch(`https://raw.githubusercontent.com/${this.repo}/${this.branch}/${tag}.json`).then(json);
   }
 }
