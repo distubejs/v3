@@ -7,6 +7,7 @@
 
 <script>
 import MainSource from "../../data/MainSource";
+import JSSource from "../../data/JSSource";
 import DocsNavbar from "../docs/Navbar.vue";
 
 export default {
@@ -20,6 +21,7 @@ export default {
     return {
       sources: {
         [MainSource.id]: MainSource,
+        [JSSource.id]: JSSource,
       },
       source: MainSource,
       tag: MainSource.defaultTag,
