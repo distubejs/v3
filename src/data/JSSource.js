@@ -1,7 +1,7 @@
 import semver from "semver";
 import DocsSource from "./DocsSource";
 
-const branchBlacklist = new Set(["docs", "js-docs", "v2", "alpha"]);
+const branchBlacklist = new Set(["docs", "js-docs", "beta", "alpha"]);
 export default new DocsSource({
   id: "JS DisTube",
   name: "JS DisTube",
