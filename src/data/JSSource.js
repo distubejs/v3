@@ -1,8 +1,7 @@
-import semver from "semver";
 import DocsSource from "./DocsSource";
 
 export default new DocsSource({
-  id: "js-disTube",
+  id: "JS-DisTube",
   name: "JS DisTube",
   repo: "skick1234/DisTube",
   global: "DisTube",
