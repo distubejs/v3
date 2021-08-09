@@ -6,7 +6,7 @@ export default new DocsSource({
   repo: "skick1234/DisTube",
   global: "DisTube",
   branch: "js-docs",
-  defaultTag: "beta",
+  defaultTag: "v2",
   branchFilter: branch => branch === "v2",
   tagFilter: tag => tag === "3.0.0-beta.33",
   defaultClass: "DisTube",
