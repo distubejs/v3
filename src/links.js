@@ -34,4 +34,5 @@ module.exports = {
   Snowflake: "https://discord.js.org/#/docs/main/master/typedef/Snowflake",
   StageChannel: "https://discord.js.org/#/docs/main/master/class/StageChannel",
   VoiceState: "https://discord.js.org/#/docs/main/master/class/VoiceState",
+  Interaction: "https://discord.js.org/#/docs/main/master/class/Interaction",
 };
