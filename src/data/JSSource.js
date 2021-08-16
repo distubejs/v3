@@ -10,6 +10,6 @@ export default new DocsSource({
   branch: "docs",
   defaultTag: "beta",
   branchFilter: branch => !branchBlacklist.has(branch),
-  tagFilter: tag => semver.gte(tag, "3.0.0") || semver.gte(tag, "3.0.0-beta.34"),
+  tagFilter: tag => semver.gte(tag, "3.0.0") || semver.gte(tag, "3.0.0-beta.37"),
   defaultFile: { category: "general", id: "welcome" },
 });

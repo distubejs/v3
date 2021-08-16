@@ -197,9 +197,8 @@ export default {
   },
 
   beforeCreate() {
-    this.routerHook = this.$router.afterEach((to, _, next) => {
+    this.routerHook = this.$router.afterEach(to => {
       this.updatePageTitle(to);
-      next();
     });
   },
 
