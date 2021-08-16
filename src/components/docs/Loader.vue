@@ -134,8 +134,8 @@ export default {
 
       let name;
       if (route.params.file) {
-        const category = this.docs.custom[route.params.category];
-        name = category && category.files[route.params.file] ? category.files[route.params.file].name : "Unknown file";
+        const category = this.docs.custom?.[route.params.category];
+        name = category?.files?.[route.params.file] ? category.files[route.params.file].name : "Unknown file";
       } else {
         const { class: clarse, typedef } = route.params;
         name = clarse || typedef || "Search";
