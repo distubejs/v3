@@ -1,15 +1,13 @@
-import semver from "semver";
 import DocsSource from "./DocsSource";
 
-const branchBlacklist = new Set(["docs", "js-docs", "v2", "alpha", "stable"]);
 export default new DocsSource({
-  id: "DisTube",
-  name: "TypeScript DisTube",
+  id: "JS-DisTube",
+  name: "JS DisTube",
   repo: "skick1234/DisTube",
   global: "DisTube",
-  branch: "docs",
-  defaultTag: "beta",
-  branchFilter: branch => !branchBlacklist.has(branch),
-  tagFilter: tag => semver.gte(tag, "3.0.0") || semver.gte(tag, "3.0.0-beta.37"),
-  defaultFile: { category: "general", id: "welcome" },
+  branch: "js-docs",
+  defaultTag: "v2",
+  branchFilter: branch => branch === "v2",
+  tagFilter: tag => tag === "3.0.0-beta.33",
+  defaultClass: "DisTube",
 });
