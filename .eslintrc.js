@@ -93,7 +93,6 @@ module.exports = {
     "block-spacing": "error",
     "brace-style": ["error", "1tbs", { allowSingleLine: true }],
     "capitalized-comments": ["error", "always", { ignoreConsecutiveComments: true }],
-    "comma-dangle": ["error", "always-multiline"],
     "comma-spacing": "error",
     "comma-style": "error",
     "computed-property-spacing": "error",

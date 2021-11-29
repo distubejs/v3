@@ -2,7 +2,7 @@
   <footer>
     <container>
       <strong><router-link to="/">DisTube</router-link></strong>
-      <p>A powerfull Discord.js v12 module to manage your music bot</p>
+      <p>A powerful Discord.js module to manage your music bot</p>
       <stats />
       <a href="" id="dark-mode-link" @click="toggleDarkMode">
         <em class="fa" :class="darkMode ? 'fa-sun-o' : 'fa-moon-o'"></em>

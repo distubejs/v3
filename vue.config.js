@@ -9,7 +9,7 @@ module.exports = {
           require("child_process")
             .execSync("git rev-parse HEAD")
             .toString()
-            .trim(),
+            .trim()
         ),
         PACKAGE_VERSION: JSON.stringify(require("./package").version),
         BUILT_AT: JSON.stringify(Date.now()),
