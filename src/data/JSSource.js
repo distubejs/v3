@@ -2,12 +2,12 @@ import DocsSource from "./DocsSource";
 
 export default new DocsSource({
   id: "JS-DisTube",
-  name: "JS DisTube",
+  name: "DisTube V2",
   repo: "skick1234/DisTube",
   global: "DisTube",
   branch: "js-docs",
   defaultTag: "v2",
   branchFilter: branch => branch === "v2",
-  tagFilter: tag => tag === "3.0.0-beta.33",
+  tagFilter: () => false,
   defaultClass: "DisTube",
 });
