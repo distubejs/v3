@@ -13,11 +13,11 @@
         </p>
         <p>
           <ul>
-            <li>Support YouTube, SoundCloud, Facebook, and <a href="http://ytdl-org.github.io/youtube-dl/supportedsites.html" target="_blank">700+ more sites</a></li>
+            <li>Support YouTube and audio link</li>
             <li>Audio filters included (bassboost, nightcore, vaporwave,...)</li>
-            <li>Flexible, use and customize easily</li>
-            <li>Autoplay related YouTube songs</li>
-            <li>Multiple servers compatible</li>
+            <li>Easy to use and customize</li>
+            <li>Autoplay related songs</li>
+            <li>Plugin system to support more sites</li>
           </ul>
         </p>
       </div>
