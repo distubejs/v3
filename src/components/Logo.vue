@@ -1,5 +1,5 @@
 <template>
-  <img src="https://cdn.jsdelivr.net/gh/skick1234/MaBu-CDN@4.8.4/DisTube/img/banner.png"/>
+  <img src="https://cdn.jsdelivr.net/gh/skick1234/MaBu-CDN@4.9.0/DisTube/img/banner.png"/>
 </template>
 
 <script>
