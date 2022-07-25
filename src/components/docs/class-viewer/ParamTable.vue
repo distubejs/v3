@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { marked } from "../../../main";
 import Types from "../Types.vue";
 import { convertLinks, typeKey } from "../../../util";
 
@@ -50,7 +50,7 @@ export default {
     typeKey,
 
     paramDescription(param) {
-      return Vue.filter("marked")(convertLinks(param.description, this.docs, this.$router, this.$route));
+      return marked(convertLinks(param.description, this.docs, this.$router, this.$route));
     },
 
     paramDefault(param) {

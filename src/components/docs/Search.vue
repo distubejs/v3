@@ -17,12 +17,12 @@
       <div v-if="search && search.length >= 2">
         <transition name="fade" mode="out-in">
           <transition-group name="fade" v-if="results.length">
-            <div v-if="fullMatches.length" :class="{ 'results-separator': fullMatches.length && partialMatches.length }" key="fullMatches">
+            <div v-if="fullMatches.length" :class="{ 'results-separator': fullMatches.length && partialMatches.length }">
               <h2>Results for "{{ search }}" ({{ fullMatches.length }})</h2>
               <search-results :results="fullMatches" :showScores="showScores" :searchTerm="search"></search-results>
             </div>
 
-            <div v-if="partialMatches.length" key="partialMatches">
+            <div v-if="partialMatches.length">
               <h2>Similar results for "{{ search }}" ({{ partialMatches.length }})</h2>
               <search-results :results="partialMatches" :showScores="showScores" :searchTerm="search"></search-results>
             </div>
@@ -32,7 +32,7 @@
         </transition>
       </div>
 
-      <p v-else key="short">Your search query must be at least two characters.</p>
+      <p v-else>Your search query must be at least two characters.</p>
     </transition>
   </div>
 </template>

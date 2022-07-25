@@ -1,7 +1,7 @@
-import Vue from "vue";
-import marked from "marked";
+import { createApp, h } from "vue";
 
 import App from "./App.vue";
+import { marked as m } from "marked";
 import router from "./router";
 import { hljs } from "./util";
 import ContainerComponent from "./components/Container.vue";
@@ -9,27 +9,29 @@ import SlideComponent from "./components/Slide.vue";
 import LoadingComponent from "./components/Loading.vue";
 import UnknownPageComponent from "./components/UnknownPage.vue";
 
-Vue.config.productionTip = false;
+export const app = createApp({
+  render: () => h(App),
+});
+app.use(router);
+app.config.productionTip = false;
 
 require("./styles/master.scss");
 
 // Register global components
-Vue.component("container", ContainerComponent);
-Vue.component("slide", SlideComponent);
-Vue.component("loading", LoadingComponent);
-Vue.component("unknown-page", UnknownPageComponent);
+app.component("container", ContainerComponent);
+app.component("slide", SlideComponent);
+app.component("loading", LoadingComponent);
+app.component("unknown-page", UnknownPageComponent);
 
 // Register the hightlight.js directive
-Vue.directive("hljs", hljs);
+app.directive("hljs", hljs);
 
 // Register filters
-Vue.filter("marked", text => {
+export const marked = text => {
   if (!text) text = "**Documentation missing.**";
-  text = marked(text);
+  text = m(text);
   return text.replace(/<(info|warn)>([\s\S]+)<\/\1>/gi, '<div class="$1">$2</div>');
-});
+};
+app.mount("#app");
 
-new Vue({
-  router,
-  render: h => h(App),
-}).$mount("#app");
+export default app;

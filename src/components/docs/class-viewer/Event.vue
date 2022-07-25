@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { marked } from "../../../main";
 import ParamTable from "./ParamTable.vue";
 import SourceButton from "../SourceButton.vue";
 import See from "../See";
@@ -35,7 +35,7 @@ export default {
 
   computed: {
     description() {
-      return Vue.filter("marked")(convertLinks(this.event.description, this.docs, this.$router, this.$route));
+      return marked(convertLinks(this.event.description, this.docs, this.$router, this.$route));
     },
   },
 };

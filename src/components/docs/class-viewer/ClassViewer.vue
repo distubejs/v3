@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { marked } from "../../../main";
 import Types from "../Types.vue";
 import TypeLink from "../TypeLink.vue";
 import ParamTable from "./ParamTable.vue";
@@ -102,7 +102,7 @@ export default {
     },
 
     description() {
-      return Vue.filter("marked")(convertLinks(this.clarse.description, this.docs, this.$router, this.$route));
+      return marked(convertLinks(this.clarse.description, this.docs, this.$router, this.$route));
     },
   },
 

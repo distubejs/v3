@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { marked } from "../../main";
 import { hljs } from "../../util";
 import SourceButton from "./SourceButton.vue";
 
@@ -30,7 +30,7 @@ export default {
       let content;
       if (this.file.type === "md") content = this.file.content;
       else content = `# ${this.file.name}\n\`\`\`${this.file.type}\n${this.file.content}\n\`\`\``;
-      return Vue.filter("marked")(content);
+      return marked(content);
     },
   },
 

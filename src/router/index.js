@@ -1,5 +1,4 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import HomePage from "../components/pages/Home.vue";
 import DocumentationPage from "../components/pages/Documentation.vue";
 import UnknownRoutePage from "../components/pages/UnknownRoute.vue";
@@ -10,58 +9,39 @@ import ClassViewer from "../components/docs/class-viewer/ClassViewer.vue";
 import TypedefViewer from "../components/docs/TypedefViewer.vue";
 import DocsSearch from "../components/docs/Search.vue";
 
-Vue.use(VueRouter);
-
-export default new VueRouter({
+const router = createRouter({
+  history: createWebHashHistory(),
   routes: [
-    { path: "/", name: "home", component: HomePage },
-    { path: "/docs", name: "docs", component: DocumentationPage, children: [
-      { path: ":source", name: "docs-source", component: DocsLoader, children: [
-        { path: ":tag", name: "docs-tag", component: DocsViewer, children: [
-          { path: "search", name: "docs-search", component: DocsSearch },
-          { path: "class/:class", name: "docs-class", component: ClassViewer },
-          { path: "typedef/:typedef", name: "docs-typedef", component: TypedefViewer },
-          { path: ":category/:file", name: "docs-file", component: FileViewer },
-        ] },
-      ] },
-    ] },
-
-    // Old URLs
-    { path: "/!", redirect: { name: "home" }, children: [
-      { path: "docs", redirect: { name: "docs" }, children: [
-        { path: "tag/:tag", redirect(to) {
-          return {
-            name: "docs-tag",
-            params: { source: "main", tag: to.params.tag },
-            query: { scrollTo: to.query.scrollto },
-          };
-        }, children: [
-          { path: "file/:category/:file", redirect(to) {
-            return {
-              name: "docs-file",
-              params: { source: "main", tag: to.params.tag, category: to.params.category, file: to.params.file },
-              query: { scrollTo: to.query.scrollto },
-            };
-          } },
-          { path: "class/:class", redirect(to) {
-            return {
-              name: "docs-class",
-              params: { source: "main", tag: to.params.tag, class: to.params.class },
-              query: { scrollTo: to.query.scrollto },
-            };
-          } },
-          { path: "typedef/:typedef", redirect(to) {
-            return {
-              name: "docs-typedef",
-              params: { source: "main", tag: to.params.tag, typedef: to.params.typedef },
-              query: { scrollTo: to.query.scrollto },
-            };
-          } },
-        ] },
-      ] },
-    ] },
-
-    // Catch-all
-    { path: "*", component: UnknownRoutePage },
+    { path: "/", name: "home", component: HomePage, props: true },
+    {
+      path: "/docs",
+      name: "docs",
+      component: DocumentationPage,
+      children: [
+        {
+          path: ":source",
+          name: "docs-source",
+          component: DocsLoader,
+          props: true,
+          children: [
+            {
+              path: ":tag",
+              name: "docs-tag",
+              component: DocsViewer,
+              props: true,
+              children: [
+                { path: "search", name: "docs-search", props: true, component: DocsSearch },
+                { path: "class/:class", name: "docs-class", props: true, component: ClassViewer },
+                { path: "typedef/:typedef", name: "docs-typedef", props: true, component: TypedefViewer },
+                { path: ":category/:file", name: "docs-file", props: true, component: FileViewer },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    { path: "/:pathMatch(.*)*", name: "not-found", component: UnknownRoutePage },
+    { path: "/:pathMatch(.*)", name: "bad-not-found", component: UnknownRoutePage },
   ],
 });
+export default router;

@@ -6,41 +6,46 @@ module.exports = {
   parserOptions: {
     parser: "babel-eslint",
   },
-  extends: [
-    "plugin:vue/essential",
-    "eslint:recommended",
-  ],
+  extends: ["plugin:vue/essential", "eslint:recommended"],
   rules: {
+    "vue/multi-word-component-names": "off",
     // 'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
 
     "no-await-in-loop": "warn",
     "no-compare-neg-zero": "error",
-    "no-extra-parens": ["warn", "all", {
-      nestedBinaryExpressions: false,
-    }],
+    "no-extra-parens": [
+      "warn",
+      "all",
+      {
+        nestedBinaryExpressions: false,
+      },
+    ],
     "no-template-curly-in-string": "error",
     "no-unsafe-negation": "error",
-    "valid-jsdoc": ["error", {
-      requireReturn: false,
-      requireReturnDescription: false,
-      prefer: {
-        return: "returns",
-        arg: "param",
+    "valid-jsdoc": [
+      "error",
+      {
+        requireReturn: false,
+        requireReturnDescription: false,
+        prefer: {
+          return: "returns",
+          arg: "param",
+        },
+        preferType: {
+          String: "string",
+          Number: "number",
+          Boolean: "boolean",
+          Symbol: "symbol",
+          object: "Object",
+          function: "Function",
+          array: "Array",
+          date: "Date",
+          error: "Error",
+          null: "void",
+        },
       },
-      preferType: {
-        String: "string",
-        Number: "number",
-        Boolean: "boolean",
-        Symbol: "symbol",
-        object: "Object",
-        function: "Function",
-        array: "Array",
-        date: "Date",
-        error: "Error",
-        null: "void",
-      },
-    }],
+    ],
 
     "accessor-pairs": "warn",
     "array-callback-return": "error",

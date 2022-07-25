@@ -1,5 +1,3 @@
-import { resolve as resolveURL } from "url";
-
 // Highlights an element with highlight.js, delaying until it's loaded
 export function hljs(el) {
   if (window.hljs) {
@@ -20,7 +18,7 @@ export function hljs(el) {
 
 // Creates a full URL for a GitHub source view
 export function sourceURL(url, tag, path, file, line) {
-  return resolveURL(url, `${tag}/${path}${file ? `/${file}` : ""}${line ? `#L${line}` : ""}`);
+  return new URL(`${tag}/${path}${file ? `/${file}` : ""}${line ? `#L${line}` : ""}`, url);
 }
 
 // Converts a JSDoc link value to an object of link information
@@ -100,7 +98,12 @@ export function scopedName(item) {
 
 // Makes a key for a types array/string
 export function typeKey(type) {
-  return typeof type === "string" ? type : type.join("-");
+  try {
+    return typeof type === "string" ? type : type.join("-");
+  } catch {
+    console.log(type);
+    return type;
+  }
 }
 
 // Stupid Holder to Improve Tag Switching

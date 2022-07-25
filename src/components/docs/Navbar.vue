@@ -15,7 +15,6 @@
       </transition>
 
       <input v-model.lazy.trim="search" v-debounce="200" type="search" placeholder="Search" @keypress.enter="goToSearch" />
-      <router-link :to="{ name: 'docs-search' }"><em class="fa fa-search"></em></router-link>
     </container>
   </div>
 </template>

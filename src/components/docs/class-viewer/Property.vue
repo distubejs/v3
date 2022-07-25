@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { marked } from "../../../main";
 import Types from "../Types.vue";
 import ParamTable from "./ParamTable.vue";
 import SourceButton from "../SourceButton.vue";
@@ -43,7 +43,7 @@ export default {
 
   computed: {
     description() {
-      return Vue.filter("marked")(convertLinks(this.prop.description, this.docs, this.$router, this.$route));
+      return marked(convertLinks(this.prop.description, this.docs, this.$router, this.$route));
     },
 
     scrollTo() {

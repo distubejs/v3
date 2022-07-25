@@ -1,10 +1,13 @@
+<!-- eslint-disable vue/no-unused-vars -->
 <template>
   <div id="docs-viewer">
     <container>
       <sidebar :docs="docs" @showPrivate="setShowPrivate" :darkMode="darkMode" @toggleDarkMode="toggleDarkMode" />
-      <transition name="fade-slide" mode="out-in">
-        <router-view :docs="docs" :key="key" :showPrivate="showPrivate" :darkMode="darkMode" />
-      </transition>
+      <router-view v-slot="{ Component }">
+        <transition name="fade-slide" mode="out-in">
+          <component :is="Component" :docs="docs" :key="key" :showPrivate="showPrivate" :darkMode="darkMode"/>
+        </transition>
+      </router-view>
     </container>
 
     <div id="docs-meta">

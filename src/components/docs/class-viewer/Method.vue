@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { marked } from "../../../main";
 import Types from "../Types.vue";
 import TypeLink from "../TypeLink.vue";
 import ParamTable from "./ParamTable.vue";
@@ -82,11 +82,11 @@ export default {
     },
 
     description() {
-      return Vue.filter("marked")(convertLinks(this.method.description, this.docs, this.$router, this.$route));
+      return marked(convertLinks(this.method.description, this.docs, this.$router, this.$route));
     },
 
     returnDescription() {
-      return Vue.filter("marked")(convertLinks(this.method.returns.description, this.docs, this.$router, this.$route));
+      return marked(convertLinks(this.method.returns.description, this.docs, this.$router, this.$route));
     },
 
     emits() {

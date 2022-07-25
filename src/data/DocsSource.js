@@ -1,7 +1,6 @@
 import semver from "semver";
 
 const json = res => {
-  console.log(res);
   if (!res.ok) throw new Error("Failed to fetch docs data file from GitHub");
   return res.json();
 };
@@ -24,7 +23,7 @@ export default class DocsSource {
   }
 
   fetchTags() {
-    if (this.tags) return Promise.resolve(this.tags);
+    if (this.tags) return this.tags;
     return Promise.all([
       fetch(`https://api.github.com/repos/${this.repo}/branches`).then(json),
       fetch(`https://api.github.com/repos/${this.repo}/tags`).then(json),
@@ -76,7 +75,7 @@ export default class DocsSource {
   }
 
   fetchDocs(tag) {
-    if (tag === "testSource") return new Promise(r => r(require("../../test.json")));
+    if (tag === "testSource") return new Promise(r => r(require("../../docs.json")));
     return fetch(`https://raw.githubusercontent.com/${this.repo}/${this.branch}/${tag}.json`).then(json);
   }
 }

@@ -33,7 +33,6 @@ export default {
     async fetch() {
       if (this.fetching) return;
       this.fetching = true;
-
       const [downloads, stars, contributors] = await Promise.all([
         fetch("https://api.npmjs.org/downloads/range/2013-08-21:2100-08-21/distube").then(json, noop),
         fetch("https://api.github.com/repos/skick1234/DisTube").then(json, noop),

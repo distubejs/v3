@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { marked } from "../../main";
 import { hljs, convertLinks, typeKey } from "../../util";
 import Types from "./Types.vue";
 import ParamTable from "./class-viewer/ParamTable.vue";
@@ -59,12 +59,12 @@ export default {
 
   computed: {
     description() {
-      return Vue.filter("marked")(convertLinks(this.typedef.description, this.docs, this.$router, this.$route));
+      return marked(convertLinks(this.typedef.description, this.docs, this.$router, this.$route));
     },
 
     returnsDescription() {
       const returns = this.typedef.returns;
-      if (returns) return Vue.filter("marked")(convertLinks(returns.description, this.docs, this.$router, this.$route));
+      if (returns) return marked(convertLinks(returns.description, this.docs, this.$router, this.$route));
       return "";
     },
   },

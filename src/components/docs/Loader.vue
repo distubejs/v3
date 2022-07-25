@@ -1,15 +1,17 @@
 <template>
   <div id="docs-body">
-    <transition name="fade-resize" mode="out-in">
-      <router-view v-if="docs" :docs="docs" :darkMode="darkMode" @toggleDarkMode="toggleDarkMode" @setRepository="setRepository" />
-      <slide v-else>
-        <loading v-if="!error" />
-        <p v-else id="docs-error">
-          Couldn't load the documentation data.
-          <pre>{{ error.toString() }}</pre>
-        </p>
-      </slide>
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="fade-resize" mode="out-in">
+        <component v-if="docs" :is="Component" :docs="docs" :darkMode="darkMode" @toggleDarkMode="toggleDarkMode" @setRepository="setRepository"/>
+        <slide v-else>
+          <loading v-if="!error" />
+          <p v-else id="docs-error">
+            Couldn't load the documentation data.
+            <pre>{{ error.toString() }}</pre>
+          </p>
+        </slide>
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -131,6 +133,7 @@ export default {
         document.title = "DisTube";
         return;
       }
+      if (!this.docs) return;
 
       let name;
       if (route.params.file) {
