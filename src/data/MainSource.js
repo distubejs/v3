@@ -8,7 +8,7 @@ export default new DocsSource({
   repo: "skick1234/DisTube",
   global: "DisTube",
   branch: "docs",
-  defaultTag: "stable",
+  defaultTag: "main",
   branchFilter: branch => !branchBlacklist.has(branch),
   tagFilter: tag => semver.gte(tag, "4.0.0"),
   defaultFile: { category: "general", id: "welcome" },
