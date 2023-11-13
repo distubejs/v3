@@ -6,7 +6,7 @@
         <router-link to="/docs">Documentation</router-link>
         <a :href="`https://github.com/${repository}`">GitHub</a>
         <a href="https://discord.gg/feaDd9h">Discord</a>
-        <a href="https://distube.js.org/guide/">Guide (WIP)</a>
+        <a href="https://github.com/skick1234/DisTube/wiki">Guide</a>
       </nav>
     </container>
   </header>
