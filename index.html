@@ -1,8 +1,212 @@
-<!doctype html><html lang="en"><head><title>DisTube</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="title" content="DisTube"><meta name="keywords" content="distube, discord.js, discord.js bot, discord bot, discord, discord music bot, discord.js music bot, music bot, spotify, soundcloud"><meta name="language" content="English"><meta name="description" content="A Discord.js module to simplify your music commands and play songs on Discord without any API key. Support YouTube, Spotify, Spotify, SoundCloud, and 700+ more sites."><meta name="theme-color" content="#ED4245"><meta property="og:type" content="website"><meta property="og:url" content="https://distube.js.org"><meta property="og:title" content="DisTube"><meta property="og:description" content="A Discord.js module to simplify your music commands and play songs on Discord without any API key."><meta property="og:image" content="https://cdn.jsdelivr.net/gh/skick1234/MaBu-CDN@4.9.0/DisTube/img/DisTube.png"><meta property="twitter:url" content="https://distube.js.org"><meta property="twitter:title" content="DisTube"><meta property="twitter:description" content="A Discord.js module to simplify your music commands and play songs on Discord without any API key."><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/skick1234/MaBu-CDN@4.9.0/DisTube/img/DisTube.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/skick1234/MaBu-CDN@4.9.0/DisTube/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous"/><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js" crossorigin="anonymous" async></script><script src="https://arc.io/widget.min.js#2srirM1z"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-EENC5MXGZT"></script><script>window.dataLayer = window.dataLayer || [];
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>DisTube API Documentation</title><meta name="description" content="Documentation for DisTube API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script><style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-sys-color-primary: #ffb3ae;
+    --md-sys-color-on-primary: #68000c;
+    --md-sys-color-primary-container: #930016;
+    --md-sys-color-on-primary-container: #ffdad7;
+    --md-sys-color-secondary: #e7bdb9;
+    --md-sys-color-on-secondary: #442928;
+    --md-sys-color-secondary-container: #5d3f3d;
+    --md-sys-color-on-secondary-container: #ffdad7;
+    --md-sys-color-tertiary: #e2c28c;
+    --md-sys-color-on-tertiary: #402d05;
+    --md-sys-color-tertiary-container: #594319;
+    --md-sys-color-on-tertiary-container: #ffdea7;
+    --md-sys-color-error: #ffb4ab;
+    --md-sys-color-on-error: #690005;
+    --md-sys-color-error-container: #93000a;
+    --md-sys-color-on-error-container: #ffb4ab;
+    --md-sys-color-background: #201a1a;
+    --md-sys-color-on-background: #ede0de;
+    --md-sys-color-surface: #201a1a;
+    --md-sys-color-on-surface: #ede0de;
+    --md-sys-color-surface-variant: #534342;
+    --md-sys-color-on-surface-variant: #d8c2c0;
+    --md-sys-color-outline: #a08c8b;
+    --md-sys-color-outline-variant: #534342;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-inverse-surface: #ede0de;
+    --md-sys-color-inverse-on-surface: #362f2e;
+    --md-sys-color-inverse-primary: #ba1926;
+    --md-sys-color-surface-dim: #181211;
+    --md-sys-color-surface-bright: #3f3737;
+    --md-sys-color-surface-container-lowest: #120d0c;
+    --md-sys-color-surface-container-low: #201a1a;
+    --md-sys-color-surface-container: #251e1e;
+    --md-sys-color-surface-container-high: #2f2828;
+    --md-sys-color-surface-container-highest: #3a3332
+  }
+}
+:root[data-theme="dark"] {
+  --md-sys-color-primary: #ffb3ae;
+  --md-sys-color-on-primary: #68000c;
+  --md-sys-color-primary-container: #930016;
+  --md-sys-color-on-primary-container: #ffdad7;
+  --md-sys-color-secondary: #e7bdb9;
+  --md-sys-color-on-secondary: #442928;
+  --md-sys-color-secondary-container: #5d3f3d;
+  --md-sys-color-on-secondary-container: #ffdad7;
+  --md-sys-color-tertiary: #e2c28c;
+  --md-sys-color-on-tertiary: #402d05;
+  --md-sys-color-tertiary-container: #594319;
+  --md-sys-color-on-tertiary-container: #ffdea7;
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-error-container: #93000a;
+  --md-sys-color-on-error-container: #ffb4ab;
+  --md-sys-color-background: #201a1a;
+  --md-sys-color-on-background: #ede0de;
+  --md-sys-color-surface: #201a1a;
+  --md-sys-color-on-surface: #ede0de;
+  --md-sys-color-surface-variant: #534342;
+  --md-sys-color-on-surface-variant: #d8c2c0;
+  --md-sys-color-outline: #a08c8b;
+  --md-sys-color-outline-variant: #534342;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-inverse-surface: #ede0de;
+  --md-sys-color-inverse-on-surface: #362f2e;
+  --md-sys-color-inverse-primary: #ba1926;
+  --md-sys-color-surface-dim: #181211;
+  --md-sys-color-surface-bright: #3f3737;
+  --md-sys-color-surface-container-lowest: #120d0c;
+  --md-sys-color-surface-container-low: #201a1a;
+  --md-sys-color-surface-container: #251e1e;
+  --md-sys-color-surface-container-high: #2f2828;
+  --md-sys-color-surface-container-highest: #3a3332
+}
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+@media (prefers-color-scheme: light) {
+  :root {
+    --md-sys-color-primary: #ba1926;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #ffdad7;
+    --md-sys-color-on-primary-container: #410005;
+    --md-sys-color-secondary: #775654;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-secondary-container: #ffdad7;
+    --md-sys-color-on-secondary-container: #2c1514;
+    --md-sys-color-tertiary: #735b2e;
+    --md-sys-color-on-tertiary: #ffffff;
+    --md-sys-color-tertiary-container: #ffdea7;
+    --md-sys-color-on-tertiary-container: #271900;
+    --md-sys-color-error: #ba1a1a;
+    --md-sys-color-on-error: #ffffff;
+    --md-sys-color-error-container: #ffdad6;
+    --md-sys-color-on-error-container: #410002;
+    --md-sys-color-background: #fffbff;
+    --md-sys-color-on-background: #201a1a;
+    --md-sys-color-surface: #fffbff;
+    --md-sys-color-on-surface: #201a1a;
+    --md-sys-color-surface-variant: #f4dddb;
+    --md-sys-color-on-surface-variant: #534342;
+    --md-sys-color-outline: #857371;
+    --md-sys-color-outline-variant: #d8c2c0;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-inverse-surface: #362f2e;
+    --md-sys-color-inverse-on-surface: #fbeeec;
+    --md-sys-color-inverse-primary: #ffb3ae;
+    --md-sys-color-surface-dim: #e4d7d6;
+    --md-sys-color-surface-bright: #fff8f7;
+    --md-sys-color-surface-container-lowest: #ffffff;
+    --md-sys-color-surface-container-low: #fef1ef;
+    --md-sys-color-surface-container: #f8ebea;
+    --md-sys-color-surface-container-high: #f2e5e4;
+    --md-sys-color-surface-container-highest: #ede0de
+  }
+}
+:root[data-theme="light"] {
+  --md-sys-color-primary: #ba1926;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffdad7;
+  --md-sys-color-on-primary-container: #410005;
+  --md-sys-color-secondary: #775654;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #ffdad7;
+  --md-sys-color-on-secondary-container: #2c1514;
+  --md-sys-color-tertiary: #735b2e;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #ffdea7;
+  --md-sys-color-on-tertiary-container: #271900;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-on-error-container: #410002;
+  --md-sys-color-background: #fffbff;
+  --md-sys-color-on-background: #201a1a;
+  --md-sys-color-surface: #fffbff;
+  --md-sys-color-on-surface: #201a1a;
+  --md-sys-color-surface-variant: #f4dddb;
+  --md-sys-color-on-surface-variant: #534342;
+  --md-sys-color-outline: #857371;
+  --md-sys-color-outline-variant: #d8c2c0;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-inverse-surface: #362f2e;
+  --md-sys-color-inverse-on-surface: #fbeeec;
+  --md-sys-color-inverse-primary: #ffb3ae;
+  --md-sys-color-surface-dim: #e4d7d6;
+  --md-sys-color-surface-bright: #fff8f7;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #fef1ef;
+  --md-sys-color-surface-container: #f8ebea;
+  --md-sys-color-surface-container-high: #f2e5e4;
+  --md-sys-color-surface-container-highest: #ede0de
+}
+</style><link rel="stylesheet" href="assets/material-style.css"/></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">DisTube API Documentation</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>DisTube API Documentation</h2></div><div class="tsd-panel tsd-typography"><div align="center">
+  <p>
+    <a href="https://www.npmjs.com/package/distube" target="_blank"><img src="https://nodei.co/npm/distube.png?downloads=true&downloadRank=true&stars=true"/></a>
+  </p>
+  <p>
+    <a href="https://github.com/skick1234/DisTube/actions" target="_blank"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/skick1234/DisTube/test.yml?branch=main&label=Tests&logo=github&style=flat-square" /></a>
+    <a href="https://nodejs.org/" target="_blank"><img alt="node-current" src="https://img.shields.io/node/v/distube?logo=node.js&logoColor=white&style=flat-square"/></a>
+    <a href="https://discord.js.org/" target="_blank"><img alt="npm peer dependency version" src="https://img.shields.io/npm/dependency-version/distube/peer/discord.js?label=discord.js&logo=discord&logoColor=white&style=flat-square"/></a>
+    <a href="https://app.codecov.io/gh/skick1234/DisTube" target="_blank"><img alt="Codecov branch" src="https://img.shields.io/codecov/c/github/skick1234/DisTube/main?logo=codecov&logoColor=white&style=flat-square&token=WWDYRRSEQW"/></a>
+    <br/>
+    <a href="https://www.npmjs.com/package/distube" target="_blank"><img alt="npm" src="https://img.shields.io/npm/dt/distube?logo=npm&style=flat-square"/></a>
+    <a href="https://github.com/skick1234/DisTube/stargazers" target="_blank"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/skick1234/DisTube?logo=github&logoColor=white&style=flat-square"/></a>
+    <a href="https://discord.gg/feaDd9h" target="_blank"><img alt="Discord" src="https://img.shields.io/discord/732254550689316914?logo=discord&logoColor=white&style=flat-square"/></a>
+  </p>
+  <p>
+    <a href='https://ko-fi.com/skick' target='_blank'><img height='48' src='https://storage.ko-fi.com/cdn/kofi3.png' alt='Buy Me a Coffee at ko-fi.com' /></a>
+  </p>
+</div>
 
-    gtag('config', 'G-EENC5MXGZT');</script><script defer="defer" src="/js/chunk-vendors.599a9e9a.js"></script><script defer="defer" src="/js/app.3dcaa166.js"></script><link href="/css/app.5ef48bff.css" rel="stylesheet"></head><body><noscript><strong>Sorry, but DisTube website doesn't work properly without JavaScript enabled.</strong></noscript><div id="app"></div></body></html>
+<a id="md:distube" class="tsd-anchor"></a><h1><a href="#md:distube">DisTube</a></h1><p>A Discord.js module to simplify your music commands and play songs with audio filters on Discord without any API key.</p>
+<p><a href="https://discord.gg/feaDd9h">DisTube Support Server</a> - <a href="https://discord.gg/feaDd9h">Frequently Asked Questions</a></p>
+<a id="md:features" class="tsd-anchor"></a><h2><a href="#md:features">Features</a></h2><ul>
+<li>Easy to use and customize</li>
+<li>Support YouTube and audio link</li>
+<li>Audio filters (bassboost, nightcore, vaporwave,...)</li>
+<li>Auto-play related songs</li>
+<li>Plugin system to support more sites (<a href="https://github.com/skick1234/DisTube/wiki/Projects-Hub#plugins">Plugin List</a>)</li>
+</ul>
+<a id="md:requirement" class="tsd-anchor"></a><h2><a href="#md:requirement">Requirement</a></h2><ul>
+<li>Node.js 18.17.0 or higher</li>
+<li><a href="https://discord.js.org">discord.js</a> v14</li>
+<li><a href="https://github.com/discordjs/voice">@discordjs/voice</a></li>
+<li><a href="https://www.ffmpeg.org/download.html">FFmpeg</a></li>
+<li><a href="https://github.com/discordjs/opus">@discordjs/opus</a></li>
+<li><a href="https://www.npmjs.com/package/sodium-native">sodium-native</a></li>
+</ul>
+<a id="md:documentation" class="tsd-anchor"></a><h2><a href="#md:documentation">Documentation</a></h2><p>Read DisTube&#39;s definitions, properties and events details in the <a href="https://distube.js.org/">API Documentation page</a>.</p>
+<p>Learn how to build a music bot from scratch with <a href="https://github.com/skick1234/DisTube/wiki">DisTube Guide</a></p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-index-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><h4 class="uppercase">Member Visibility</h4><form><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div><div class="tsd-theme-toggle"><h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:distube"><span>Dis<wbr/>Tube</span></a><ul><li><a href="#md:features"><span>Features</span></a></li><li><a href="#md:requirement"><span>Requirement</span></a></li><li><a href="#md:documentation"><span>Documentation</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>DisTube API Documentation</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div><script>
+          try {
+            const generateLinkElement = document.querySelector(".tsd-generator a");
+            const link = document.createElement("a");
+            Object.assign(link, {
+              href: "https://github.com/dmnsgn/typedoc-material-theme",
+              target: "_blank",
+              rel: "noreferrer",
+              innerText: "typedoc-material-theme."
+            });
+            generateLinkElement.insertAdjacentElement("afterend", link);
+            generateLinkElement.insertAdjacentText("afterend", " with ");
+          } catch (error) {
+
+          }
+        </script></body></html>

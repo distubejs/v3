@@ -1,0 +1,195 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Playlist | DisTube API Documentation</title><meta name="description" content="Documentation for DisTube API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-sys-color-primary: #ffb3ae;
+    --md-sys-color-on-primary: #68000c;
+    --md-sys-color-primary-container: #930016;
+    --md-sys-color-on-primary-container: #ffdad7;
+    --md-sys-color-secondary: #e7bdb9;
+    --md-sys-color-on-secondary: #442928;
+    --md-sys-color-secondary-container: #5d3f3d;
+    --md-sys-color-on-secondary-container: #ffdad7;
+    --md-sys-color-tertiary: #e2c28c;
+    --md-sys-color-on-tertiary: #402d05;
+    --md-sys-color-tertiary-container: #594319;
+    --md-sys-color-on-tertiary-container: #ffdea7;
+    --md-sys-color-error: #ffb4ab;
+    --md-sys-color-on-error: #690005;
+    --md-sys-color-error-container: #93000a;
+    --md-sys-color-on-error-container: #ffb4ab;
+    --md-sys-color-background: #201a1a;
+    --md-sys-color-on-background: #ede0de;
+    --md-sys-color-surface: #201a1a;
+    --md-sys-color-on-surface: #ede0de;
+    --md-sys-color-surface-variant: #534342;
+    --md-sys-color-on-surface-variant: #d8c2c0;
+    --md-sys-color-outline: #a08c8b;
+    --md-sys-color-outline-variant: #534342;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-inverse-surface: #ede0de;
+    --md-sys-color-inverse-on-surface: #362f2e;
+    --md-sys-color-inverse-primary: #ba1926;
+    --md-sys-color-surface-dim: #181211;
+    --md-sys-color-surface-bright: #3f3737;
+    --md-sys-color-surface-container-lowest: #120d0c;
+    --md-sys-color-surface-container-low: #201a1a;
+    --md-sys-color-surface-container: #251e1e;
+    --md-sys-color-surface-container-high: #2f2828;
+    --md-sys-color-surface-container-highest: #3a3332
+  }
+}
+:root[data-theme="dark"] {
+  --md-sys-color-primary: #ffb3ae;
+  --md-sys-color-on-primary: #68000c;
+  --md-sys-color-primary-container: #930016;
+  --md-sys-color-on-primary-container: #ffdad7;
+  --md-sys-color-secondary: #e7bdb9;
+  --md-sys-color-on-secondary: #442928;
+  --md-sys-color-secondary-container: #5d3f3d;
+  --md-sys-color-on-secondary-container: #ffdad7;
+  --md-sys-color-tertiary: #e2c28c;
+  --md-sys-color-on-tertiary: #402d05;
+  --md-sys-color-tertiary-container: #594319;
+  --md-sys-color-on-tertiary-container: #ffdea7;
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-error-container: #93000a;
+  --md-sys-color-on-error-container: #ffb4ab;
+  --md-sys-color-background: #201a1a;
+  --md-sys-color-on-background: #ede0de;
+  --md-sys-color-surface: #201a1a;
+  --md-sys-color-on-surface: #ede0de;
+  --md-sys-color-surface-variant: #534342;
+  --md-sys-color-on-surface-variant: #d8c2c0;
+  --md-sys-color-outline: #a08c8b;
+  --md-sys-color-outline-variant: #534342;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-inverse-surface: #ede0de;
+  --md-sys-color-inverse-on-surface: #362f2e;
+  --md-sys-color-inverse-primary: #ba1926;
+  --md-sys-color-surface-dim: #181211;
+  --md-sys-color-surface-bright: #3f3737;
+  --md-sys-color-surface-container-lowest: #120d0c;
+  --md-sys-color-surface-container-low: #201a1a;
+  --md-sys-color-surface-container: #251e1e;
+  --md-sys-color-surface-container-high: #2f2828;
+  --md-sys-color-surface-container-highest: #3a3332
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --md-sys-color-primary: #ba1926;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #ffdad7;
+    --md-sys-color-on-primary-container: #410005;
+    --md-sys-color-secondary: #775654;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-secondary-container: #ffdad7;
+    --md-sys-color-on-secondary-container: #2c1514;
+    --md-sys-color-tertiary: #735b2e;
+    --md-sys-color-on-tertiary: #ffffff;
+    --md-sys-color-tertiary-container: #ffdea7;
+    --md-sys-color-on-tertiary-container: #271900;
+    --md-sys-color-error: #ba1a1a;
+    --md-sys-color-on-error: #ffffff;
+    --md-sys-color-error-container: #ffdad6;
+    --md-sys-color-on-error-container: #410002;
+    --md-sys-color-background: #fffbff;
+    --md-sys-color-on-background: #201a1a;
+    --md-sys-color-surface: #fffbff;
+    --md-sys-color-on-surface: #201a1a;
+    --md-sys-color-surface-variant: #f4dddb;
+    --md-sys-color-on-surface-variant: #534342;
+    --md-sys-color-outline: #857371;
+    --md-sys-color-outline-variant: #d8c2c0;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-inverse-surface: #362f2e;
+    --md-sys-color-inverse-on-surface: #fbeeec;
+    --md-sys-color-inverse-primary: #ffb3ae;
+    --md-sys-color-surface-dim: #e4d7d6;
+    --md-sys-color-surface-bright: #fff8f7;
+    --md-sys-color-surface-container-lowest: #ffffff;
+    --md-sys-color-surface-container-low: #fef1ef;
+    --md-sys-color-surface-container: #f8ebea;
+    --md-sys-color-surface-container-high: #f2e5e4;
+    --md-sys-color-surface-container-highest: #ede0de
+  }
+}
+:root[data-theme="light"] {
+  --md-sys-color-primary: #ba1926;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffdad7;
+  --md-sys-color-on-primary-container: #410005;
+  --md-sys-color-secondary: #775654;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #ffdad7;
+  --md-sys-color-on-secondary-container: #2c1514;
+  --md-sys-color-tertiary: #735b2e;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #ffdea7;
+  --md-sys-color-on-tertiary-container: #271900;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-on-error-container: #410002;
+  --md-sys-color-background: #fffbff;
+  --md-sys-color-on-background: #201a1a;
+  --md-sys-color-surface: #fffbff;
+  --md-sys-color-on-surface: #201a1a;
+  --md-sys-color-surface-variant: #f4dddb;
+  --md-sys-color-on-surface-variant: #534342;
+  --md-sys-color-outline: #857371;
+  --md-sys-color-outline-variant: #d8c2c0;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-inverse-surface: #362f2e;
+  --md-sys-color-inverse-on-surface: #fbeeec;
+  --md-sys-color-inverse-primary: #ffb3ae;
+  --md-sys-color-surface-dim: #e4d7d6;
+  --md-sys-color-surface-bright: #fff8f7;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #fef1ef;
+  --md-sys-color-surface-container: #f8ebea;
+  --md-sys-color-surface-container-high: #f2e5e4;
+  --md-sys-color-surface-container-highest: #ede0de
+}
+</style><link rel="stylesheet" href="../assets/material-style.css"/></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base=".."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="../assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">DisTube API Documentation</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb"><li><a href="../modules.html">DisTube API Documentation</a></li><li><a href="Playlist.html">Playlist</a></li></ul><h1>Class Playlist&lt;T&gt;</h1></div><section class="tsd-panel tsd-comment"><div class="tsd-comment tsd-typography"><p>Class representing a playlist.</p>
+</div><div class="tsd-comment tsd-typography"></div></section> <section class="tsd-panel"><h4>Type Parameters</h4><ul class="tsd-type-parameter-list"><li><span><a id="T" class="tsd-anchor"></a><span class="tsd-kind-type-parameter">T</span> = <span class="tsd-signature-type">unknown</span></span></li></ul></section> <section class="tsd-panel"><h4>Implements</h4><ul class="tsd-hierarchy"><li><a href="../interfaces/PlaylistInfo.html" class="tsd-signature-type tsd-kind-interface">PlaylistInfo</a></li></ul></section><section class="tsd-panel"><h4 class="tsd-before-signature">Indexable</h4><div class="tsd-signature"><span class="tsd-signature-symbol">[</span>x: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></div></section><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L8">src/struct/Playlist.ts:8</a></li></ul></aside><section class="tsd-panel-group tsd-index-group"><section class="tsd-panel tsd-index-panel"><details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><h5 class="tsd-index-heading uppercase" role="button" aria-expanded="false" tabIndex="0"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="../assets/icons.svg#icon-chevronSmall"></use></svg> Index</h5></summary><div class="tsd-accordion-details"><section class="tsd-index-section"><h3 class="tsd-index-heading">Constructors</h3><div class="tsd-index-list"><a href="Playlist.html#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a>
+</div></section><section class="tsd-index-section"><h3 class="tsd-index-heading">Properties</h3><div class="tsd-index-list"><a href="Playlist.html#_member" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#member?</span></a>
+<a href="Playlist.html#_metadata" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#metadata</span></a>
+<a href="Playlist.html#name" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>name</span></a>
+<a href="Playlist.html#songs" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>songs</span></a>
+<a href="Playlist.html#source" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>source</span></a>
+<a href="Playlist.html#thumbnail" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>thumbnail?</span></a>
+<a href="Playlist.html#url" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>url?</span></a>
+</div></section><section class="tsd-index-section"><h3 class="tsd-index-heading">Accessors</h3><div class="tsd-index-list"><a href="Playlist.html#duration" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-262144"></use></svg><span>duration</span></a>
+<a href="Playlist.html#formattedDuration" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-262144"></use></svg><span>formatted<wbr/>Duration</span></a>
+<a href="Playlist.html#member" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-262144"></use></svg><span>member</span></a>
+<a href="Playlist.html#metadata" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-262144"></use></svg><span>metadata</span></a>
+<a href="Playlist.html#user" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-262144"></use></svg><span>user</span></a>
+</div></section></div></details></section></section><section class="tsd-panel-group tsd-member-group"><h2>Constructors</h2><section class="tsd-panel tsd-member"><a id="constructor" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class="tsd-signature tsd-anchor-link"><a id="constructor.new_Playlist" class="tsd-anchor"></a><span class="tsd-kind-constructor-signature">new <wbr/>Playlist</span><span class="tsd-signature-symbol">&lt;</span><a class="tsd-signature-type tsd-kind-type-parameter" href="Playlist.html#constructor.new_Playlist.T-1">T</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">playlist</span>, <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Playlist.html" class="tsd-signature-type tsd-kind-class">Playlist</a><span class="tsd-signature-symbol">&lt;</span><a class="tsd-signature-type tsd-kind-type-parameter" href="Playlist.html#constructor.new_Playlist.T-1">T</a><span class="tsd-signature-symbol">&gt;</span><a href="#constructor.new_Playlist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></li><li class="tsd-description"><div class="tsd-comment tsd-typography"><p>Create a playlist</p>
+</div><section class="tsd-panel"><h4>Type Parameters</h4><ul class="tsd-type-parameter-list"><li><span><a id="constructor.new_Playlist.T-1" class="tsd-anchor"></a><span class="tsd-kind-type-parameter">T</span> = <span class="tsd-signature-type">unknown</span></span></li></ul></section><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">playlist</span>: <a href="../interfaces/PlaylistInfo.html" class="tsd-signature-type tsd-kind-interface">PlaylistInfo</a><span class="tsd-signature-symbol"> | </span><a href="Song.html" class="tsd-signature-type tsd-kind-class">Song</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></span><div class="tsd-comment tsd-typography"><p>Playlist</p>
+</div><div class="tsd-comment tsd-typography"></div></li><li><span><span class="tsd-kind-parameter">options</span>: <span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">member</span><span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">GuildMember</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">metadata</span><span class="tsd-signature-symbol">?: </span><a class="tsd-signature-type tsd-kind-type-parameter" href="Playlist.html#constructor.new_Playlist.T-1">T</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">properties</span><span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol"> = {}</span></span><div class="tsd-comment tsd-typography"><p>Optional options</p>
+</div><div class="tsd-comment tsd-typography"></div><ul class="tsd-parameters"><li class="tsd-parameter"><h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">member</span><span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">GuildMember</span></h5></li><li class="tsd-parameter"><h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">metadata</span><span class="tsd-signature-symbol">?: </span><a class="tsd-signature-type tsd-kind-type-parameter" href="Playlist.html#constructor.new_Playlist.T-1">T</a></h5></li><li class="tsd-parameter"><h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">properties</span><span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5></li></ul></li></ul></div><h4 class="tsd-returns-title">Returns <a href="Playlist.html" class="tsd-signature-type tsd-kind-class">Playlist</a><span class="tsd-signature-symbol">&lt;</span><a class="tsd-signature-type tsd-kind-type-parameter" href="Playlist.html#constructor.new_Playlist.T-1">T</a><span class="tsd-signature-symbol">&gt;</span></h4><div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L23">src/struct/Playlist.ts:23</a></li></ul></aside></li></ul></section></section><section class="tsd-panel-group tsd-member-group"><h2>Properties</h2><section class="tsd-panel tsd-member tsd-is-private"><a id="_member" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <code class="tsd-tag ts-flagOptional">Optional</code> <span>#member</span><a href="#_member" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><div class="tsd-signature"><span class="tsd-kind-property">#member</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">GuildMember</span></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L13">src/struct/Playlist.ts:13</a></li></ul></aside></section><section class="tsd-panel tsd-member tsd-is-private"><a id="_metadata" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>#metadata</span><a href="#_metadata" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><div class="tsd-signature"><span class="tsd-kind-property">#metadata</span><span class="tsd-signature-symbol">:</span> <a class="tsd-signature-type tsd-kind-type-parameter" href="Playlist.html#constructor.new_Playlist.T-1">T</a></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L12">src/struct/Playlist.ts:12</a></li></ul></aside></section><section class="tsd-panel tsd-member"><a id="name" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><div class="tsd-signature"><span class="tsd-kind-property">name</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources"><p>Implementation of <a href="../interfaces/PlaylistInfo.html">PlaylistInfo</a>.<a href="../interfaces/PlaylistInfo.html#name">name</a></p><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L11">src/struct/Playlist.ts:11</a></li></ul></aside></section><section class="tsd-panel tsd-member"><a id="songs" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>songs</span><a href="#songs" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><div class="tsd-signature"><span class="tsd-kind-property">songs</span><span class="tsd-signature-symbol">:</span> <a href="Song.html" class="tsd-signature-type tsd-kind-class">Song</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources"><p>Implementation of <a href="../interfaces/PlaylistInfo.html">PlaylistInfo</a>.<a href="../interfaces/PlaylistInfo.html#songs">songs</a></p><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L10">src/struct/Playlist.ts:10</a></li></ul></aside></section><section class="tsd-panel tsd-member"><a id="source" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>source</span><a href="#source" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><div class="tsd-signature"><span class="tsd-kind-property">source</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources"><p>Implementation of <a href="../interfaces/PlaylistInfo.html">PlaylistInfo</a>.<a href="../interfaces/PlaylistInfo.html#source">source</a></p><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L9">src/struct/Playlist.ts:9</a></li></ul></aside></section><section class="tsd-panel tsd-member"><a id="thumbnail" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>thumbnail</span><a href="#thumbnail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><div class="tsd-signature"><span class="tsd-kind-property">thumbnail</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources"><p>Implementation of <a href="../interfaces/PlaylistInfo.html">PlaylistInfo</a>.<a href="../interfaces/PlaylistInfo.html#thumbnail">thumbnail</a></p><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L15">src/struct/Playlist.ts:15</a></li></ul></aside></section><section class="tsd-panel tsd-member"><a id="url" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>url</span><a href="#url" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><div class="tsd-signature"><span class="tsd-kind-property">url</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources"><p>Implementation of <a href="../interfaces/PlaylistInfo.html">PlaylistInfo</a>.<a href="../interfaces/PlaylistInfo.html#url">url</a></p><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L14">src/struct/Playlist.ts:14</a></li></ul></aside></section></section><section class="tsd-panel-group tsd-member-group"><h2>Accessors</h2><section class="tsd-panel tsd-member"><a id="duration" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>duration</span><a href="#duration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class="tsd-signature" id="duration.duration-1"><span class="tsd-signature-keyword">get</span> duration<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li><li class="tsd-description"><div class="tsd-comment tsd-typography"><p>Playlist duration in second.</p>
+</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L94">src/struct/Playlist.ts:94</a></li></ul></aside></li></ul></section><section class="tsd-panel tsd-member"><a id="formattedDuration" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>formatted<wbr/>Duration</span><a href="#formattedDuration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class="tsd-signature" id="formattedDuration.formattedDuration-1"><span class="tsd-signature-keyword">get</span> formattedDuration<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li><li class="tsd-description"><div class="tsd-comment tsd-typography"><p>Formatted duration string <code>hh:mm:ss</code>.</p>
+</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L101">src/struct/Playlist.ts:101</a></li></ul></aside></li></ul></section><section class="tsd-panel tsd-member"><a id="member" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>member</span><a href="#member" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class="tsd-signature" id="member.member-1"><span class="tsd-signature-keyword">get</span> member<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">GuildMember</span></li><li class="tsd-description"><div class="tsd-comment tsd-typography"><p>User requested.</p>
+</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">GuildMember</span></h4><div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><p>Implementation of <a href="../interfaces/PlaylistInfo.html">PlaylistInfo</a>.<a href="../interfaces/PlaylistInfo.html#member">member</a></p><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L108">src/struct/Playlist.ts:108</a></li></ul></aside></li><li class="tsd-signature" id="member.member-2"><span class="tsd-signature-keyword">set</span> member<span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">member</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li><li class="tsd-description"><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">member</span>: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">GuildMember</span></span></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources"><p>Implementation of <a href="../interfaces/PlaylistInfo.html">PlaylistInfo</a>.<a href="../interfaces/PlaylistInfo.html#member">member</a></p><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L112">src/struct/Playlist.ts:112</a></li></ul></aside></li></ul></section><section class="tsd-panel tsd-member"><a id="metadata" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>metadata</span><a href="#metadata" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class="tsd-signature" id="metadata.metadata-1"><span class="tsd-signature-keyword">get</span> metadata<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a class="tsd-signature-type tsd-kind-type-parameter" href="Playlist.html#constructor.new_Playlist.T-1">T</a></li><li class="tsd-description"><h4 class="tsd-returns-title">Returns <a class="tsd-signature-type tsd-kind-type-parameter" href="Playlist.html#constructor.new_Playlist.T-1">T</a></h4><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L125">src/struct/Playlist.ts:125</a></li></ul></aside></li><li class="tsd-signature" id="metadata.metadata-2"><span class="tsd-signature-keyword">set</span> metadata<span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">metadata</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li><li class="tsd-description"><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">metadata</span>: <a class="tsd-signature-type tsd-kind-type-parameter" href="Playlist.html#constructor.new_Playlist.T-1">T</a></span></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L129">src/struct/Playlist.ts:129</a></li></ul></aside></li></ul></section><section class="tsd-panel tsd-member"><a id="user" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>user</span><a href="#user" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class="tsd-signature" id="user.user-1"><span class="tsd-signature-keyword">get</span> user<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">User</span></li><li class="tsd-description"><div class="tsd-comment tsd-typography"><p>User requested.</p>
+</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">User</span></h4><div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/skick1234/test/blob/6671d6036535ec645e4ddc6c16afea172a753cce/src/struct/Playlist.ts#L121">src/struct/Playlist.ts:121</a></li></ul></aside></li></ul></section></section></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-index-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><h4 class="uppercase">Member Visibility</h4><form><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div><div class="tsd-theme-toggle"><h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#constructor" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a><a href="#_member" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#member</span></a><a href="#_metadata" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#metadata</span></a><a href="#name" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>name</span></a><a href="#songs" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>songs</span></a><a href="#source" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>source</span></a><a href="#thumbnail" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>thumbnail</span></a><a href="#url" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1024"></use></svg><span>url</span></a><a href="#duration" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-262144"></use></svg><span>duration</span></a><a href="#formattedDuration" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-262144"></use></svg><span>formatted<wbr/>Duration</span></a><a href="#member" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-262144"></use></svg><span>member</span></a><a href="#metadata" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-262144"></use></svg><span>metadata</span></a><a href="#user" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-262144"></use></svg><span>user</span></a></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="../modules.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1"></use></svg><span>DisTube API Documentation</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base=".."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div><script>
+          try {
+            const generateLinkElement = document.querySelector(".tsd-generator a");
+            const link = document.createElement("a");
+            Object.assign(link, {
+              href: "https://github.com/dmnsgn/typedoc-material-theme",
+              target: "_blank",
+              rel: "noreferrer",
+              innerText: "typedoc-material-theme."
+            });
+            generateLinkElement.insertAdjacentElement("afterend", link);
+            generateLinkElement.insertAdjacentText("afterend", " with ");
+          } catch (error) {
+
+          }
+        </script></body></html>
